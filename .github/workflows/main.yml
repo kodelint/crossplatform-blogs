@@ -1,11 +1,8 @@
 name: Publish articles on dev.to
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    paths:
+      - dev.to/**
 jobs:
   build:
     name: Publisher for Dev.to
