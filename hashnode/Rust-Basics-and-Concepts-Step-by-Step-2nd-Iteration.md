@@ -7,6 +7,7 @@ domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
 
+
 This blog I will try to concentrate on some of the basic but very important concepts of Rust . This would be my 2nd blog about Rust , you can find the 1st one [here](https://sroy.hashnode.dev/rust-basics-and-concepts-step-by-step-1st-iteration). I will try to discuss about Ownership, Ownership transfers, Borrowing, Heap, Stack in this blog
 
 ### So, What is Ownership in Rust
