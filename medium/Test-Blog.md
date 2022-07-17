@@ -1,4 +1,4 @@
 ---
 title: Test Blog
-tags: rust, programming
+tags: testing github action
 ---
