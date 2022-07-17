@@ -1,4 +1,4 @@
 ---
 title: Test Blog
-tags: testing github
+tags: Testing Github
 ---
