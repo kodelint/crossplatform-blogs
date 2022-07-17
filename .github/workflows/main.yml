@@ -38,6 +38,7 @@ on:
 
 jobs:
   build:
+    name: publish-to-medium
     runs-on: ubuntu-latest
     steps:
     - id: files
