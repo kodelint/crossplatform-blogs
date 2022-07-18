@@ -43,4 +43,6 @@ jobs:
       - uses: infraway/post-medium-action@main
         with:
           access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
-          markdown: ${{ steps.post.outputs.data }}
+          markdown_file: ${{ steps.posts.outputs.post0 }}
+          base_url: https://medium.com
+          post_url: https://medium.com/@email2sroy
