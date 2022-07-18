@@ -38,8 +38,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read the post
+        uses: jitterbit/get-changed-files@v1
         id: post
-        run: echo "::set-output name=data::$(cat ./medium/*.md)"
+        run: |
+          i=0
+          for changed_file in ${{ steps.files.outputs.added_modified }}; do
+            echo "Do something with ${changed_file}."
+            if [[ "${changed_file}" == "medium/"* ]];
+            then
+              echo "File ${changed_file} matched post."
+              echo "::set-output name=post${i}::${changed_file}"
+              ((i=i+1))
+            fi
+          done
       - uses: infraway/post-medium-action@main
         with:
           access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
