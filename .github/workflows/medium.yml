@@ -41,7 +41,6 @@ jobs:
       uses: jitterbit/get-changed-files@v1
     - id: posts
       name: Get the changed files
-      id: post
       run: |
         i=0
         for changed_file in ${{ steps.files.outputs.added_modified }}; do
