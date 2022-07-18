@@ -43,7 +43,7 @@ jobs:
       name: Get the changed files
       run: |
         i=0
-        for changed_file in ${{ steps.files.outputs.added }}; do
+        for changed_file in ${{ steps.files.outputs.added_modified }}; do
           echo "Do something with ${changed_file}."
           if [[ "${changed_file}" == "medium/"* ]];
           then
