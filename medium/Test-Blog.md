@@ -1,4 +1,3 @@
----
-title: Test Blog - Not Working
-tags: Testing Github Actions
----
+## Testing something with Github Actions
+
+This is just for testing
