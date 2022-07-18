@@ -48,7 +48,7 @@ jobs:
           if [[ "${changed_file}" == "medium/"* ]];
           then
             echo "File ${changed_file} matched post."
-            echo "::set-output name=post${i}::./${changed_file}"
+            echo "::set-output name=post${i}::$(basename ${changed_file})"
             ((i=i+1))
           fi
         done
