@@ -41,7 +41,6 @@ jobs:
       uses: jitterbit/get-changed-files@v1
     - id: posts
       name: Get the changed files
-      uses: jitterbit/get-changed-files@v1
       id: post
       run: |
         i=0
