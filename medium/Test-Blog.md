@@ -1,3 +1,6 @@
-## Testing something with Github Actions
-
-This is just for testing4
+---
+title: Test Article
+description: Some description
+tags: test, ci
+license: public-domain
+---

@@ -54,10 +54,9 @@ jobs:
         done
     - if: steps.posts.outputs.post0
       name: Publish to medium
-      # uses: infraway/post-medium-action@main
-      run: 'ls -ltRa'
-      # with:
-      #   access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
-      #   markdown_file: ${{ steps.posts.outputs.post0 }}
-      #   base_url: https://medium.com
-      #   post_url: https://medium.com/@email2sroy
+      uses: infraway/post-medium-action@main
+      with:
+        access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
+        markdown_file: ${{ steps.posts.outputs.post0 }}
+        base_url: https://medium.com
+        post_url: https://medium.com/@email2sroy
