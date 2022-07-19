@@ -3,60 +3,56 @@
 #
 # jobs:
 #   build:
-#     name: publish-to-medium
 #     runs-on: ubuntu-latest
 #     steps:
-#     - id: files
-#       uses: jitterbit/get-changed-files@v1
-#     - id: posts
-#       name: Detecting posts from the changes
-#       run: |
-#         i=0
-#         for changed_file in ${{ steps.files.outputs.added_modified }}; do
-#           echo "Do something with ${changed_file}."
-#           if [[ "${changed_file}" == "medium/"* ]];
-#           then
-#             echo "File ${changed_file} matched post."
-#             echo "::set-output name=post${i}::${changed_file}"
-#             ((i=i+1))
-#           fi
-#         done
-#     - if: steps.posts.outputs.post0
-#       name: Publish to medium
-#       uses: infraway/post-medium-action@v1.5.0
-#       with:
-#         access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
-#         markdown_file: ${{ steps.posts.outputs.post0 }}
-#         base_url: https://medium.com
-#         post_url: https://medium.com/@email2sroy
+#       - id: files
+#         uses: jitterbit/get-changed-files@v1
+#       - id: posts
+#         name: Get the changed files
+#         run: |
+#           i=0
+#           for changed_file in ${{ steps.files.outputs.added_modified }}; do
+#             echo "Do something with ${changed_file}."
+#             if [[ "${changed_file}" == "medium/"* ]];
+#             then
+#               echo "File ${changed_file} matched post."
+#               echo "::set-output name=post${i}::${changed_file}"
+#               ((i=i+1))
+#             fi
+#           done
+#       - if: steps.posts.outputs.post0
+#         name: Publish to medium
+#         uses: InfraWay/post-medium-action@v1.6.0
+#         with:
+#           access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
+#           markdown_file: ${{ steps.posts.outputs.post0 }}
+#           base_url: https://medium.com
+#           post_url: https://medium.com/@email2sroy
 
-name: publish-to-medium
-on: [push]
+name: 'publish'
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'medium/**'
+
+concurrency:
+  cancel-in-progress: true
+  group: publish-${{ github.head_ref || github.ref }}
 
 jobs:
-  build:
+  publish:
+    name: publish new article
     runs-on: ubuntu-latest
     steps:
-      - id: files
-        uses: jitterbit/get-changed-files@v1
-      - id: posts
-        name: Get the changed files
-        run: |
-          i=0
-          for changed_file in ${{ steps.files.outputs.added_modified }}; do
-            echo "Do something with ${changed_file}."
-            if [[ "${changed_file}" == "medium/"* ]];
-            then
-              echo "File ${changed_file} matched post."
-              echo "::set-output name=post${i}::${changed_file}"
-              ((i=i+1))
-            fi
-          done
-        - if: steps.posts.outputs.post0
-          name: Publish to medium
-          uses: InfraWay/post-medium-action@v1.6.0
-          with:
-            access_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
-            markdown_file: ${{ steps.posts.outputs.post0 }}
-            base_url: https://medium.com
-            post_url: https://medium.com/@email2sroy
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: blogpub
+        uses: protiumx/blogpub@main
+        with:
+          articles_folder: medium
+          gh_token: ${{ secrets.BLOG_POST_TOKEN_GITHUB }}
+          medium_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
+          medium_user_id: @email2sroy
