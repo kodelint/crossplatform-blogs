@@ -55,4 +55,4 @@ jobs:
           articles_folder: medium
           gh_token: ${{ secrets.BLOG_POST_TOKEN_GITHUB }}
           medium_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}
-          medium_user_id: @email2sroy
+          medium_user_id: email2sroy
