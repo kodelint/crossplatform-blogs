@@ -53,7 +53,7 @@ jobs:
         uses: protiumx/blogpub@main
         with:
           articles_folder: medium
-          medium_base_url: https://medium.com/@email2sroy
+          medium_base_url: https://medium.com/me/stories/drafts
           devto_api_key: ${{ secrets.DEVTO_TOKEN }}
           gh_token: ${{ secrets.BLOG_POST_TOKEN_GITHUB }}
           medium_token: ${{ secrets.MEDIUM_ACCESS_TOKEN }}

@@ -1,6 +1,6 @@
 ---
 title: Test Article
-description: Some description
+description: Some descriptions
 tags: test, ci
 license: public-domain
 ---
