@@ -1,7 +1,7 @@
 ---
 published: false
 title: "SRE/DevOps Interview Questions — Linux Troubleshooting"
-cover_image: "https://cdn-images-1.medium.com/max/2500/1*jqpTqmU-S3f5TMhg_yFrgw.png"
+cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1658350256075/Qe6ZpmMxX.png?auto=compress
 description:
 tags: interview, devops, sre, linux troubleshooting
 series:
