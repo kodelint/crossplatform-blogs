@@ -1,9 +1,9 @@
 ---
 published: false
-title: Testing
-cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1658350256075/Qe6ZpmMxX.png?auto=compress
-description:
-tags: interview, devops, sre, linux troubleshooting
+title: "Your title"
+cover_image: "https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/master/blog-posts/NAME-OF-YOUR-BLOG-POST/assets/your-asset.png"
+description: "Description of the article"
+tags: tag1, tag2, tag3
 series:
 canonical_url:
 ---
