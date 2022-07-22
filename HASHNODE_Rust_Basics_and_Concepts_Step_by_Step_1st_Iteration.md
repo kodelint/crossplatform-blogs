@@ -2,7 +2,7 @@
 title: Rust - Basics and Concepts, Step by Step — 1st Iteration
 subtitle: Rust Basic Concepts
 tags: rust, programming
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1611242173172/AOX1gE2jc.png?auto=compress
+cover: https://github.com/kodelint/blog-images/raw/main/rust/01-rust.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
