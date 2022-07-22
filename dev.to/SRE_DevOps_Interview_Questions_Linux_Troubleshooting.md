@@ -1,9 +1,9 @@
 ---
 published: false
-title: "Your title"
-cover_image: "https://github.com/kodelint/blog-images/raw/main/common/my.jpg"
-description: "Description of the article"
-tags: tag1, tag2, tag3
+title: "SRE/DevOps Interview Questions — Linux Troubleshooting"
+cover_image: "https://github.com/kodelint/blog-images/raw/main/common/interview01.png"
+description:
+tags: interview, devops, sre, linux, troubleshooting
 series:
 canonical_url:
 ---
@@ -130,6 +130,6 @@ Other awesome resources available out there for interview preparations
 
 I just made this effort to put all these together in one place. I will keep tracking these and put them together here in part…so stay tune!!
 
-![](https://cdn-images-1.medium.com/max/2800/0*b-aTKZcL-mBEHH1R.png)
+![](https://github.com/kodelint/blog-images/raw/main/common/interview02.png)
 
 ## Happy Troubleshooting and Best of luck!!

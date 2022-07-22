@@ -129,7 +129,6 @@ Other awesome resources available out there for interview preparations
 
 I just made this effort to put all these together in one place. I will keep tracking these and put them together here in part…so stay tune!!
 
-![](https://cdn-images-1.medium.com/max/2800/0*b-aTKZcL-mBEHH1R.png)
+![](https://github.com/kodelint/blog-images/raw/main/common/interview02.png)
 
 ## Happy Troubleshooting and Best of luck!!
-
