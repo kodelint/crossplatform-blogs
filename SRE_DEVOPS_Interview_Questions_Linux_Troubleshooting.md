@@ -5,7 +5,6 @@ tags: interview, devops, sre, troubleshooting
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1658350256075/Qe6ZpmMxX.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
-ignorePost: true
 ---
 
 I have been on both side of the table as interviewer and as interviewee for **DevOps** and **SRE Roles**. This blog I am trying to share some of the questions I have been asked or I have asked.
