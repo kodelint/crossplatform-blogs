@@ -8,8 +8,6 @@ series:
 canonical_url:
 ---
 
-![](https://cdn-images-1.medium.com/max/2500/1*jqpTqmU-S3f5TMhg_yFrgw.png)
-
 I have been on both side of the table as interviewer and as interviewee for **DevOps** and **SRE Roles**. This blog I am trying to share some of the questions I have been asked or I have asked.
 
 _**Note: This is just to share knowledge, experience and some fun questions**_
