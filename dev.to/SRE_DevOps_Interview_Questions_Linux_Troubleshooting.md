@@ -1,6 +1,6 @@
 ---
 published: false
-title: "SRE/DevOps Interview Questions — Linux Troubleshooting"
+title: "SRE - DevOps Interview Questions — Linux Troubleshooting"
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1658350256075/Qe6ZpmMxX.png?auto=compress
 description:
 tags: interview, devops, sre, linux troubleshooting
