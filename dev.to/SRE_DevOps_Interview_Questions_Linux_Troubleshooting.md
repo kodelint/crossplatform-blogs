@@ -1,11 +1,12 @@
 ---
 published: false
-title: "Your title"
-cover_image: "https://github.com/kodelint/blog-images/raw/main/common/my.jpg"
-description: "Description of the article"
-tags: tag1, tag2, tag3
-series:
-canonical_url:
+title: Your title
+cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/my.jpg'
+description: Description of the article
+tags: 'tag1, tag2, tag3'
+series: null
+canonical_url: null
+id: 1149074
 ---
 
 I have been on both side of the table as interviewer and as interviewee for **DevOps** and **SRE Roles**. This blog I am trying to share some of the questions I have been asked or I have asked.
