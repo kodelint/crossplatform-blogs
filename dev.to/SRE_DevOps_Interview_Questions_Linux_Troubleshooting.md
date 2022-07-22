@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: SRE DevOps Interview Questions — Linux Troubleshooting
 cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/interview01.png'
 description: null
