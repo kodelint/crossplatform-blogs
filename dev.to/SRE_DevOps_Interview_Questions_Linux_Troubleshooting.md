@@ -1,9 +1,9 @@
 ---
 published: false
-title: "SRE/DevOps Interview Questions — Linux Troubleshooting"
+title: "SRE DevOps Interview Questions — Linux Troubleshooting"
 cover_image: "https://github.com/kodelint/blog-images/raw/main/common/interview01.png"
 description:
-tags: interview, devops, sre, linux, troubleshooting
+tags: interview, devops, sre, troubleshooting
 series:
 canonical_url:
 ---
