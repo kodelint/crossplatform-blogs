@@ -36,31 +36,34 @@ Any **DevOps** and **SRE** interview commonly starts with some troubleshooting q
 >  Most common bad programming signals are `SIGSEGV`, `SIGBUS` and `SIGILL` usually caused by **bad memory management**, **a bad pointer**, **uninitialized values** or **memory corruption**.
 
 **5. Explain the `/proc` filesystem**
->  `/proc` is very special in that it is also a virtual filesystem. It’s sometimes referred to as a process information pseudo-file system. It doesn’t contain ‘real’ files but runtime system information. Lot of system utilities are simply calls to files in this directory  
->  `/proc` file system has the pid for the process running. if you do `cd /procs/self` you will see al lot file and there size is `0` however you will see that they do contain information  
->  `/maps` provides information about the memory address space of the process  
->  `/cmdline` contains the arguments for the commandline  
->  `/environ` provides information about the process' current environment  
->  `/fd` contains symbolic link pointing to each file for which the process currently has file descriptor  
->  `/proc/locks` shows all the locks on currently exist in the system  
->  `/proc/sys/fs` contains some useful information like `file-nr` which tells you the number of open files and available on the system  
->  `/proc/sys/vm` holds files and information to tune virtual memory
+>
+- `/proc` is very special in that it is also a virtual filesystem. It’s sometimes referred to as a process information pseudo-file system. It doesn’t contain ‘real’ files but runtime system information. Lot of system utilities are simply calls to files in this directory
+- `/proc` file system has the pid for the process running. if you do `cd /procs/self` you will see al lot file and there size is `0` however you will see that they do contain information
+- `/maps` provides information about the memory address space of the process
+- `/cmdline` contains the arguments for the commandline
+- `/environ` provides information about the process' current environment
+- `/fd` contains symbolic link pointing to each file for which the process currently has file descriptor
+- `/proc/locks` shows all the locks on currently exist in the system
+- `/proc/sys/fs` contains some useful information like `file-nr` which tells you the number of open files and available on the system
+- `/proc/sys/vm` holds files and information to tune virtual memory
 
 **6. When I get a `filesystem is full` error, but `df` shows there is free space**
 >  Check check if you see zero `IFree` by using `df -i` . If that is not the case then see if deleted files are still in use using `lsof` and restart those processes
 
 **7. What are the performance tools you would use on Linux Machine**
->  `uptime`  
-> `dmesg` | `tail`  
-> `vmstat 1`  
-> `mpstat -P ALL 1`  
-> `pidstat 1`  
-> `iostat -xz 1`  
-> `free -m`  
-> `sar -n DEV 1`  
-> `sar -n TCP,ETCP 1`  
-> `top`  
->  [Detailed Answer is available here](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55)
+>
+- `uptime`  
+- `dmesg` | `tail`  
+- `vmstat 1`  
+- `mpstat -P ALL 1`  
+- `pidstat 1`  
+- `iostat -xz 1`  
+- `free -m`  
+- `sar -n DEV 1`  
+- `sar -n TCP,ETCP 1`  
+- `top`  
+
+[Detailed Answer is available here](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55)
 
 **8. Explain Linux FileSystem**
 >  Interviewer wants to know how much you understand about linux filesystems. A specific type of data storage format, such as `EXT3`, `EXT4`, `BTRFS`, `XFS`, and so on. Linux supports almost 100 types of filesystems.  
