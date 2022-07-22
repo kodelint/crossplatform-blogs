@@ -1,11 +1,12 @@
 ---
 published: false
-title: "SRE DevOps Interview Questions — Linux Troubleshooting"
-cover_image: "https://github.com/kodelint/blog-images/raw/main/common/interview01.png"
-description:
-tags: interview, devops, sre, troubleshooting
-series:
-canonical_url:
+title: SRE DevOps Interview Questions — Linux Troubleshooting
+cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/interview01.png'
+description: null
+tags: 'interview, devops, sre, troubleshooting'
+series: null
+canonical_url: null
+id: 1149083
 ---
 
 I have been on both side of the table as interviewer and as interviewee for **DevOps** and **SRE Roles**. This blog I am trying to share some of the questions I have been asked or I have asked.
