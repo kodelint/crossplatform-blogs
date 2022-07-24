@@ -39,7 +39,7 @@ fork: retry: Resource temporarily unavailable
 
 So how to find what commands are built-in and can be useful to you for troubleshooting ? Also if external commands are not available then how to gather information about the system (`top`, `ps`, `lsof`…even `cat` is not available )…..🤔
 
-→ /proc filesystem and couple of **built-in** like read and for
+→ `/proc` filesystem and couple of **built-in** like read and for
 >  
 Type help in the shell and it will give you all the commands which are **in-build** to the shell
 Read about /proc filesystem in my previous blog [SRE/DevOps Interview Questions — Linux Troubleshooting](https://awstip.com/sre-devops-interview-questions-linux-troubleshooting-1b8ffe82c16) and also [here](https://www.kernel.org/doc/html/latest/filesystems/proc.html)
@@ -120,7 +120,7 @@ So using `read`, for and other internal commands you can use to find out what is
 <HR>
 
 <FONT FACE="Helvetica,Arial"><B>
-Description: The document you requested has moved to a new location.  The new location is "[https://www.example.com/](https://www.example.com/)".
+Description: The document you requested has moved to a new location.  The new location is "https://www.example.com".
 </B></FONT>
 <HR>
 </BODY>
