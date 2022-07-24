@@ -7,6 +7,7 @@ tags: 'interview, devops, sre, troubleshooting'
 series: null
 canonical_url: null
 id: 1150275
+date: '2022-07-24T16:38:33Z'
 ---
 
 This is an extension of my previous blog about **[SRE/DevOps Interview Questions — Linux Troubleshooting](https://awstip.com/sre-devops-interview-questions-linux-troubleshooting-1b8ffe82c16)**. Sometimes the initial question is vague and then follow-up kind of clears the path, that is what I am going to focus on in this blog. I will try to get more questions and possible explanations here.
