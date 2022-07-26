@@ -7,6 +7,7 @@ tags: 'terraform, DevOps, iac'
 series: null
 canonical_url: null
 id: 1152071
+date: '2022-07-26T17:50:12Z'
 ---
 
 Like any other programming language terraform is also a declarative language to manage your infrastructure. This is how **Hashicorp** defines terraform language
