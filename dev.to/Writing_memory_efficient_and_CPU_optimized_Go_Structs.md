@@ -2,10 +2,11 @@
 published: false
 title: Golang Writing memory efficient and CPU optimized Go Structs
 cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-golang-struct.png'
-description:
-tags: golang, programming
-series:
-canonical_url:
+description: null
+tags: 'golang, programming'
+series: null
+canonical_url: null
+id: 1151456
 ---
 
 A struct is a typed collection of fields, useful for grouping data into records. This allows all the data relating to one entity to be neatly encapsulated in one lightweight type definition, behavior can then be implemented by defining functions on the struct type.
