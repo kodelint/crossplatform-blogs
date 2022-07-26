@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Terraform — How to organize your terraform code
 cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-terraform.jpeg'
 description: null
