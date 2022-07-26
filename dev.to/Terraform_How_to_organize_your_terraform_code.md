@@ -36,7 +36,7 @@ resource "aws_iam_role" "emr_service_role" {
 }
 ```
 
-* **`Variables`** are used to provide input to the resource **`parameters`**.
+* `Variables` are used to provide input to the resource `parameters`.
 
 ```terraform
 variable "aws_region_shortname" {
@@ -75,7 +75,7 @@ provider "aws" {
 }
 ```
 
-* **`Locals`** local variables which needs to be evaluated before feeding them to resource parameters
+* `Locals` local variables which needs to be evaluated before feeding them to resource parameters
 
 ```terraform
 locals {
