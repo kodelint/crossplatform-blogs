@@ -2,7 +2,7 @@
 published: false
 title: Golang - Writing memory efficient and CPU optimized Go Structs
 cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-golang-struct.png'
-description: null
+description:
 tags: golang, programming
 series:
 canonical_url:
