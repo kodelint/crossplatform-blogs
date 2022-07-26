@@ -3,9 +3,10 @@ published: false
 title: Terraform — How to organize your terraform code
 cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-terraform.jpeg'
 description: null
-tags: terraform, DevOps, iac
+tags: 'terraform, DevOps, iac'
 series: null
 canonical_url: null
+id: 1152071
 ---
 
 Like any other programming language terraform is also a declarative language to manage your infrastructure. This is how **Hashicorp** defines terraform language
