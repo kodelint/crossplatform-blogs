@@ -6,6 +6,8 @@ description: Using Cobra for Golang CLI App
 tags: 'golang, programming'
 id: 1152440
 ---
+
+
 Golang has good amount libraries in-build and maintained by community. One of them is [Cobra](https://github.com/spf13/cobra), which is pretty good to write any _**cli apps**_. Today will try to see how we can use the library and what all functionality it provides.
 
 ![](https://github.com/kodelint/blog-images/raw/main/common/01-golan-cli.jpeg)
