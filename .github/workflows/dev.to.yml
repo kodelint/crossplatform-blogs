@@ -13,7 +13,7 @@ jobs:
         fetch-depth: 0
 
     - name: Get changed files
-        id: changed-files
+        id: changed_files
         uses: tj-actions/changed-files@v24
 
     - name: Publishing articles on dev.to
@@ -29,7 +29,7 @@ jobs:
         github_token: ${{ secrets.BLOG_POST_TOKEN_GITHUB }}
         # (Optional) The files to publish. Default is "posts/**/*.md"
         # files: 'dev.to/*.md'
-        files: steps.changed-files.outputs.all_changed_files
+        files: steps.changed_files.outputs.all_changed_files
         # (Optional) The git branch to use. Default is 'main'.
         branch: main
         # (Optional) Use conventional commit messages. Default is false.
