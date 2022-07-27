@@ -48,7 +48,7 @@ func main() {
 
 >Note: Don’t worry about `commands.Execute()` which we haven’t defined yet. Basically it is calling the `Execute()` function from `package commands`.
 
-**`root.go`** ➡ let’s check the root.go which will have the `init()` function which will be responsible to run some of the stuff we need to be executed first. To read more about go `init()` function check [my previous blog](https://blog.devgenius.io/what-is-init-in-golang-b806caa52822).
+**`root.go`** ➡ let’s check the `root.go` which will have the `init()` function which will be responsible to run some of the stuff we need to be executed first. To read more about go `init()` function check [my previous blog](https://blog.devgenius.io/what-is-init-in-golang-b806caa52822).
 
 This is how my `root.go` looks
 
@@ -88,7 +88,7 @@ func Execute() {
 ```
 #### Let me explain couple of things here
 
-Now I have variable called `rootCmd` which has type of `&cobra.Command{}` type. The `&cobra.Command{}` type basically has fields like Use , Short and Long to be populated. Which are nothing but the name of the cli app and _**short**_ and _**long**_ description for the app which will be displayed when we run the app. Read more about [Command](https://pkg.go.dev/github.com/spf13/cobra#Command) Type.
+Now I have variable called `rootCmd` which has type of `&cobra.Command{}` type. The `&cobra.Command{}` type basically has fields like `Use`, `Short` and `Long` to be populated. Which are nothing but the name of the cli app and _**short**_ and _**long**_ description for the app which will be displayed when we run the app. Read more about [Command](https://pkg.go.dev/github.com/spf13/cobra#Command) Type.
 
 ```golang
 var rootCmd = &cobra.Command{
@@ -98,7 +98,7 @@ var rootCmd = &cobra.Command{
 }
 ```
 
-Next important thing is `init()` function which is calling another method of **cobra's**  `AddCommand()`. Here I added both the _**sub-commands**_ I needed for my app `checkUrlsCmd` and `checkStatusCmd` . These are just variables so it doesn’t matter what you name them. To read more about go `init()` function check [my previous blog](https://blog.devgenius.io/what-is-init-in-golang-b806caa52822).
+Next important thing is `init()` function which is calling another method of **cobra's**  `AddCommand()`. Here I added both the _**sub-commands**_ I needed for my app `checkUrlsCmd` and `checkStatusCmd`. These are just variables so it doesn’t matter what you name them. To read more about go `init()` function check [my previous blog](https://blog.devgenius.io/what-is-init-in-golang-b806caa52822).
 
 ```golang
 func init() {
@@ -106,7 +106,7 @@ func init() {
 }
 ```
 
-Finally I have the `Execute()` which if you remember was called in `main.go` , executing the [`command.Execute()`](https://pkg.go.dev/github.com/spf13/cobra#Command.Execute) method inside it and I am checking for `error` in return.
+Finally I have the `Execute()` which if you remember was called in `main.go`, executing the [`command.Execute()`](https://pkg.go.dev/github.com/spf13/cobra#Command.Execute) method inside it and I am checking for `error` in return.
 
 ```golang
 func Execute() {
@@ -152,7 +152,7 @@ func checkUrl(args []string) error {
 }
 ```
 
-Here I have variable `checkUrlCmd` type of `&cobra.Command{}` using the field like `Use` , `Short` and `Long` . As you can see that we have one more field here called Run which take an anonymous function as value and run another function `checkUrl()` . Function `checkUrl()` is responsible to perform all the checks and return an error if there are any. Run function are executed in following order. Learn more [here](https://pkg.go.dev/github.com/spf13/cobra#Command)
+Here I have variable `checkUrlCmd` type of `&cobra.Command{}` using the field like `Use` , `Short` and `Long` . As you can see that we have one more field here called Run which take an anonymous function as value and run another function `checkUrl()`. Function `checkUrl()` is responsible to perform all the checks and return an error if there are any. Run function are executed in following order. Learn more [here](https://pkg.go.dev/github.com/spf13/cobra#Command)
 
 ```bash
 PersistentPreRun()
@@ -198,7 +198,7 @@ func checkStatus(args []string) error {
 }
 ```
 
-Now let’s fetch all dependent package by running go mod init and then go mod tidy .
+##### Now let’s fetch all dependent package by running `go mod init` and then `go mod tidy`
 
 ```bash
 >> go mod init url-monitor
@@ -215,7 +215,7 @@ go: downloading github.com/stretchr/testify v1.2.2
 go: downloading github.com/pmezard/go-difflib v1.0.0
 ```
 
-**Cool**!! We are ready to build the app by running `go build .` with the `url-monitor` folder. This should generate a binary file call `url-monitor`
+**Cool!!** We are ready to build the app by running `go build .` with the `url-monitor` folder. This should generate a binary file call `url-monitor`
 
 ```bash
 url-monitor
