@@ -1,8 +1,8 @@
 ---
 published: false
-title: "Golang Writing CLI App in Golang with Cobra"
-cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-golan-cli.jpeg'
-description: "Using Cobra for Golang CLI App"
+title: Golang - Writing CLI App in Golang with Cobra
+cover_image: https://github.com/kodelint/blog-images/raw/main/common/01-golan-cli.jpeg
+description: Using Cobra for Golang CLI App
 tags: golang, programming
 ---
 
