@@ -5,6 +5,7 @@ cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-golan-c
 description: Using Cobra for Golang CLI App
 tags: 'golang, programming'
 id: 1152440
+date: '2022-07-27T02:46:29Z'
 ---
 
 
