@@ -6,6 +6,7 @@ description: null
 tags: 'golang, programming'
 series: null
 canonical_url: null
+id: 1154032
 ---
 
 ![](https://github.com/kodelint/blog-images/raw/main/common/02-learn-go.png)
