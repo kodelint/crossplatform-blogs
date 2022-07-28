@@ -45,7 +45,10 @@ fmt.Println(emp.Salary)
 
 Now **structure** `tags` are small pieces of `metadata` attached to `fields` of a `struct` that provide instructions to other `Go` code that works with the `struct`.
 
-#### For Example: Here is custom type called Employee can be annotated as
+#### For Example:
+
+Here is custom type called Employee can be annotated as
+
 ```golang
 type Employee struct {
   FirstName string `json: "first_name"`
