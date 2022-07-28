@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Golang - Struct Tags explained
 cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-Use-Struct-Tags-in-Golang.jpeg'
 description: null
