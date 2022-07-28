@@ -94,7 +94,7 @@ I used [“hashicorp/vault/api”](http://"github.com/hashicorp/vault/api") modu
 
 **3. Connect to Internal and External GitHub APIs**: In order to fetch the external repository and push it internal one I needed to make connection to both external and internal. I used “[**github**](http://"github.com/google/go-github/v38/github")” module accomplish that.
 
-**4. Do something with the Data**: Now I have the data stored in `yamlFile` variable, I have the `GitToken` from `Vault` . It’s time to access the data individually and do something with it. Data can be accessed something like this: Because it is **`List`** so I can iterate over it and hold the chunk of data in temporary loop variable `v`
+**4. Do something with the Data**: Now I have the data stored in `yamlFile` variable, I have the `GitToken` from `Vault`. It’s time to access the data individually and do something with it. Data can be accessed something like this: Because it is **`List`** so I can iterate over it and hold the chunk of data in temporary loop variable `v`
 
 ```golang
 for _, v := range yamlFile.RepositoryList {
