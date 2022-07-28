@@ -8,13 +8,16 @@ series: null
 canonical_url: null
 ---
 
-Today will try to explore **Golang's structure** `tags` . **Structure** or `struct` is the way to define custom `types` in `Golang` . In simple terms struct can be explained as
+Today will try to explore **Golang's structure** `tags`. **Structure** or `struct` is the way to define custom `types` in `Golang`. In simple terms struct can be explained as
 
 > _When collection of information are organized in way that they can represented as a unit of information. The defined unit will be able to hold data with similar attributes._
 
 ![](https://github.com/kodelint/blog-images/raw/main/common/01-Use-Struct-Tags-in-Golang.jpeg)
 
-##### For Example: Here is custom type called Employee
+#### For Example:
+
+Here is custom `type` called `Employee`
+
 ```golang
 type Employee struct {
   FirstName string
@@ -23,7 +26,7 @@ type Employee struct {
   Salary     float64
 }
 ```
-If we define a variable say `emp` of type `Employee` then they will have similar attributes like `FirstName` , `LastName` , `EmployeeID` and `Salary`. Which can be accessed as
+If we define a variable say `emp` of type `Employee` then they will have similar attributes like `FirstName`, `LastName`, `EmployeeID` and `Salary`. Which can be accessed as
 
 ```golang
 // Assign the values
@@ -41,7 +44,7 @@ fmt.Println(emp.Salary)
 
 Now **structure** `tags` are small pieces of `metadata` attached to `fields` of a `struct` that provide instructions to other `Go` code that works with the `struct`.
 
-##### For Example: Here is custom type called Employee can be annotated as
+#### For Example: Here is custom type called Employee can be annotated as
 ```golang
 type Employee struct {
   FirstName string `json: "first_name"`
@@ -93,7 +96,7 @@ mrgObj := yaml.NewDecoder(f)
 fmt.Println("%s %s employ_id is %s", mgr.FirstName, mgr.LastName, mgr.EmployeeID)
 ```
 
-The **JSON encoder** in the standard library makes use of struct tags as annotations indicating to the encoder how you would like to name your fields in the `JSON` output. These **JSON encoding** and `decoding` mechanisms can be found in the `encoding/json` [package](https://godoc.org/encoding/json).
+The **JSON encoder** in the standard library makes use of struct tags as annotations indicating to the encoder how you would like to name your fields in the `JSON` output. These **JSON encoding** and `decoding` mechanisms can be found in the [**`encoding/json` package**](https://godoc.org/encoding/json).
 
 Now say you have **empty JSON field** which you want to eliminate then you can use `omitempty` and if the `JSON` object doesn’t have the value for that key the it will not be populated and skipped
 
@@ -119,14 +122,15 @@ type Manager struct {
 
 If you want to go deeper and access the tags then you can use [_**reflect**_](https://pkg.go.dev/reflect) package which allows run-time [reflection](https://en.wikipedia.org/wiki/Reflection_(computer_programming))
 
-Using tag makes life way to easier to navigate storing data and it’s representations. You can use [_**go-playground/validator**_](https://github.com/go-playground/validator) which provides much more capabilities around tags . Some of the abilities are like
+Using tag makes life way to easier to navigate storing data and it’s representations. You can use [_**go-playground/validator**_](https://github.com/go-playground/validator) which provides much more capabilities around tags. Some of the abilities are like
 
 >
 * comparison between fields
 * conditioning between fields
 * manage dependencies between fields and lot more….
 
-##### For Example:
+#### For Example:
+
 Below examples show how we can using [go-playground/validator](https://github.com/go-playground/validator) to validate of the field without writing any additional extra code.
 
 ```golang
