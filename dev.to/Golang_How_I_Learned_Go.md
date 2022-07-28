@@ -12,7 +12,7 @@ canonical_url: null
 
 As **Operations Engineer** I was always a scripting guy, however as I transitioned and adopting **DevOps Culture**. I started spending more time learning _**programming languages**_.
 
-My _**obsession**_ with Go started with my `terraform` journey. I was fascinated with the fact that `Go` produces a single binary for the platform and can run without any external dependency, unlike `python`. This was more than enough to get me started on this.....
+My _**obsession**_ with `Go` started with my `terraform` journey. I was fascinated with the fact that `Go` produces a single binary for the platform and can run without any external dependency, unlike `python`. This was more than enough to get me started on this.....
 
 > **The best way to learn a programming language is to write code in it**
 
@@ -36,7 +36,7 @@ RepositoryList:
 
 So the `YAML` file is organized to provide a **List of Repositories**. I used [**yaml.v2**](http://"gopkg.in/yaml.v2") module, which provides the ability to **encode** and **decode** `YAML` values.
 
-I would also need a _**data structure**_ to hold the values for me. So I used struct to define a type and variable to store the data in it. Something like below
+I would also need a _**data structure**_ to hold the values for me. So I used **Golang** `struct` to define a custom `type` and `variable` to store the data in it. Something like below
 
 ```golang
 type GithubRepo struct {
@@ -52,9 +52,9 @@ type RepositoryList struct {
 }
 ```
 
-Let me talk a little bit about the `yaml:”internal_org”` these are called `Tags`. `Tags` are a way to attach additional information to a `struct` field. `Tags` use the `key:value` format. It’s not a strict rule, but a convention, which provides built-in parsing.
+Let me talk a little bit about the `yaml:"internal_org"` these are called `Tags`. `Tags` are a way to attach additional information to a `struct` field. `Tags` use the `key:value` format. It’s not a strict rule, but a convention, which provides built-in parsing.
 
-Different packages use **`tags`** for different reasons. We can use them used them in encoding libs, like `json`, `xml`, `bson`, `yaml` etc
+Different packages use `Tags` for different reasons. We can use them used them in encoding libs, like `json`, `xml`, `bson`, `yaml` etc
 
 Now all I need is to read the `YAML` file and store the data in `RepositoryList` type variable
 
@@ -79,11 +79,15 @@ if err != nil {
 }
 ```
 
-> **Quick Tip**: never forget to **close** the file after reading it. However you might need it again. To avoid opening and closing multiple time you can use the defer key word and an anonymous function to check for closing errors
+> **Quick Tip**: never forget to **close** the file after reading it. However you might need it again. To avoid opening and closing multiple time you can use the `defer` key word and an anonymous function to check for closing errors
 
 **2. Fetch Credentials from Vault**: All `credentials` are in vault the program needs to fetch them from `vault` based on couple of `environment` variables like
 
-* `VAULT_ADDRESS` , `VAULT_APP_ROLE_ID` , `VAULT_APP_ROLE_SECRET_ID` , `VAULT_SECRET_PATH`
+>
+* `VAULT_ADDRESS`,
+* `VAULT_APP_ROLE_ID`,
+* `VAULT_APP_ROLE_SECRET_ID`,
+* `VAULT_SECRET_PATH`
 
 I used [“hashicorp/vault/api”](http://"github.com/hashicorp/vault/api") module for the same.
 
