@@ -7,6 +7,7 @@ tags: 'golang, programming'
 series: null
 canonical_url: null
 id: 1154032
+date: '2022-07-28T19:09:55Z'
 ---
 
 ![](https://github.com/kodelint/blog-images/raw/main/common/02-learn-go.png)
