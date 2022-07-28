@@ -7,6 +7,7 @@ tags: 'golang, programming'
 series: null
 canonical_url: null
 id: 1153214
+date: '2022-07-28T00:15:30Z'
 ---
 
 Today will try to explore **Golang's structure** `tags`. **Structure** or `struct` is the way to define custom `types` in `Golang`. In simple terms struct can be explained as
