@@ -10,6 +10,7 @@ id: 1153214
 date: '2022-07-28T00:15:30Z'
 ---
 
+
 Today will try to explore **Golang's structure** `tags`. **Structure** or `struct` is the way to define custom `types` in `Golang`. In simple terms struct can be explained as
 
 > _When collection of information are organized in way that they can represented as a unit of information. The defined unit will be able to hold data with similar attributes._
