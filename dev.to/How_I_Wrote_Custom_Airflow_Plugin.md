@@ -75,11 +75,11 @@ And returns nothing
 Both [`create_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L26) and [`terminate_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L99) are powered by the operator classes [`EC2ExtendedCreateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/operators/ec2_create_instance.py#L8) and [`EC2ExtendedTerminateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/operators/ec2_terminate_instance.py#L7) which inherits the [`BaseOperator`](https://airflow.apache.org/docs/apache-airflow/1.10.12/_api/airflow/models/baseoperator/index.html) for native functionality.
 
 ### How to use
-Once the [`airflow-ec2-plugin-extended`](https://github.com/kodelint/airflow-ec2-plugin-extended) Plugin is installed and the `dag` is enabled you will something like this in **Airflow Graph View**
+Once the [`airflow-ec2-plugin-extended`](https://github.com/kodelint/airflow-ec2-plugin-extended) Plugin is installed and the `dag` is enabled you will see something like this in **Airflow Graph View**
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-airflow-ec2-plugin.png)
 
-#### To create instance
+#### To create instance `dag` code
 
 ```python
 from operators.ec2_create_instance import EC2ExtendedCreateInstance
@@ -98,6 +98,8 @@ create_ec2 = EC2ExtendedCreateInstance(
     region_name='us-east-1',
     task_id='create_ec2',
 )
+
+create_ec2 >> terminate_ec2
 ```
 Above piece of code banks on the operator and creates the `ec2` instance with arguments provided and stores the result in [XCom - `create_ec2`](https://airflow.apache.org/docs/apache-airflow/1.10.12/concepts.html#xcoms)
 > [XComs](https://airflow.apache.org/docs/apache-airflow/1.10.12/concepts.html#xcoms) let tasks exchange messages, allowing more nuanced forms of control and shared state. The name is an abbreviation of “cross-communication”. XComs are principally defined by a key, value, and timestamp, but also track attributes like the task/DAG that created the XCom and when it should become visible. Any object that can be pickled can be used as an XCom value, so users should make sure to use objects of appropriate size.
@@ -107,7 +109,7 @@ Above piece of code banks on the operator and creates the `ec2` instance with ar
   <img src=https://github.com/kodelint/blog-assets/raw/main/images/03-airflow-ec2-plugin.png width="470" height="250" />
 </p>
 
-#### To terminate instance
+#### To terminate instance `dag` code
 
 ```python
 from operators.ec2_create_instance import EC2ExtendedCreateInstance
@@ -121,6 +123,8 @@ terminate_ec2 = EC2ExtendedTerminateInstance(
     task_id='terminate_ec2',
  )
 )
+
+create_ec2 >> terminate_ec2
 ```
 To `terminate` the same instance we fetch the value _(basically `instance_id`)_ from [XCom - `create_ec2`](https://airflow.apache.org/docs/apache-airflow/1.10.12/concepts.html#xcoms) and pass it as value for `instance_id` argument.
 
@@ -132,4 +136,8 @@ So, we are fetching first element of the `List[str]` as we need the `instance_id
 <img src=https://github.com/kodelint/blog-assets/raw/main/images/04-airflow-ec2-plugin.png width="900" height="150" />  
 
 
-Here is the **[example dag](https://github.com/kodelint/airflow-ec2-plugin-extended#example-dag)** for the same
+Here is the **[example dag](https://github.com/kodelint/airflow-ec2-plugin-extended#example-dag)** for the same.
+
+Hope this helps to provide some understanding how we can write some custom [Apache Airflow](https://airflow.apache.org/), we are using **Version:** [`1.10.12`](https://airflow.apache.org/docs/apache-airflow/1.10.12/project.html) plugins if we need one.
+
+## Happy Coding!!
