@@ -10,6 +10,7 @@ id: 1154032
 date: '2022-07-28T19:09:55Z'
 ---
 
+
 ![](https://github.com/kodelint/blog-assets/raw/main/images/02-learn-go.png)
 
 As **Operations Engineer** I was always a scripting guy, however as I transitioned and adopting **DevOps Culture**. I started spending more time learning _**programming languages**_.
