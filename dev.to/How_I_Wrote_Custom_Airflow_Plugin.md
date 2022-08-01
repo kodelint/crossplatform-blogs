@@ -1,9 +1,9 @@
 ---
 published: false
 title: Airflow Plugins - How I wrote custom Airflow Plugins
-cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-airflow.png'
+cover_image: https://github.com/kodelint/blog-assets/raw/main/images/01-airflow.png
 description: How to write a custom Airflow plugin
-tags: 'airflow-plugins, python, programming'
+tags: airflow-plugins, python, programming
 series: null
 canonical_url: null
 ---
