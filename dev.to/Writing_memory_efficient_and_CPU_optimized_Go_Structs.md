@@ -9,7 +9,6 @@ canonical_url: null
 id: 1151456
 date: '2022-07-26T03:26:04Z'
 ---
-
 A struct is a typed collection of fields, useful for grouping data into records. This allows all the data relating to one entity to be neatly encapsulated in one lightweight type definition, behavior can then be implemented by defining functions on the struct type.
 
 This blog I will try to explain how we can efficiently write struct in terms of **Memory** **Usages** and **CPU Cycles.**

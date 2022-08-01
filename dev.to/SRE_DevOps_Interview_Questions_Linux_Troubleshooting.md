@@ -9,7 +9,6 @@ canonical_url: null
 id: 1149083
 date: '2022-07-22T21:43:55Z'
 ---
-
 I have been on both side of the table as interviewer and as interviewee for **DevOps** and **SRE Roles**. This blog I am trying to share some of the questions I have been asked or I have asked.
 
 _**Note: This is just to share knowledge, experience and some fun questions**_

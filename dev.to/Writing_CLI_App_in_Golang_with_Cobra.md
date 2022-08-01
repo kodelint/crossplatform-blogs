@@ -8,7 +8,6 @@ id: 1152440
 date: '2022-07-27T02:46:29Z'
 ---
 
-
 Golang has good amount libraries in-build and maintained by community. One of them is [Cobra](https://github.com/spf13/cobra), which is pretty good to write any _**cli apps**_. Today will try to see how we can use the library and what all functionality it provides.
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-golan-cli.jpeg)
