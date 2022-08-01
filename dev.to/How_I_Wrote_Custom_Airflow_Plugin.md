@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Airflow Plugin - How I wrote custom Airflow Plugins
 cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-airflow.png'
 description: null
@@ -13,13 +13,13 @@ It's been quite some time I have been using [Apache Airflow](https://airflow.apa
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-airflow.png)
 
-Anyways we had requirement for `creating`, `terminating` `ec2` instances on the fly. With version [`1.10.12`](https://airflow.apache.org/docs/apache-airflow/1.10.12/project.html), one has to use [Hooks, Sensors and Operators From Contrib](https://airflow.apache.org/docs/apache-airflow/1.10.12/integration.html#aws-amazon-web-services) or install [`apache-airflow-backport-providers-amazon` ~> `2021.3.3`](https://pypi.org/project/apache-airflow-backport-providers-amazon/).
+Anyways we had a requirement to `create`, `terminate` `ec2` instances on the fly. With version [`1.10.12`](https://airflow.apache.org/docs/apache-airflow/1.10.12/project.html), one has to install [`apache-airflow-backport-providers-amazon`](https://pypi.org/project/apache-airflow-backport-providers-amazon/).
 
-So [`apache-airflow-backport-providers-amazon`](https://pypi.org/project/apache-airflow-backport-providers-amazon/) does have support for [`ec2`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py) but only limited to [`EC2StartInstanceOperator`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py#L29) and [`EC2StopInstanceOperator`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py#L75) which takes **instance_id** as argument and performs **starting** and **stopping** operations on that `instance_id`. The [`ec2`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py) operator is missing the **create** and **terminate** functionality if that is something you need.
+So [`apache-airflow-backport-providers-amazon`](https://pypi.org/project/apache-airflow-backport-providers-amazon/) does have support for [`ec2`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py) but only limited to **start** using [`EC2StartInstanceOperator`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py#L29) and **stop** using [`EC2StopInstanceOperator`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py#L75), given the `instance_id` is known. It is missing **create** and **terminate** functionality.
 
-> So I decided to take some learning from [`ec2`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py) operator and _**extend**_ with _**create**_ and _**terminate**_ functionality.
+> So I decided to take some learnings from [`ec2`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py) operator and _**extend it**_ with _**create**_ and _**terminate**_ functionality.
 
-So, lets go through the code by understanding the folder structure first
+#### So, lets go through the code by understanding the folder structure first
 
 ```bash
 airflow-ec2-plugin-extended
@@ -39,16 +39,16 @@ airflow-ec2-plugin-extended
 
 ---
 ### `ec2_extended_plugins.py`
-[`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) contains the definition for the `EC2ExtendedPlugins` hooks [`EC2ExtendedHooks`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L16) and operators [`EC2ExtendedCreateInstance`,`EC2ExtendedTerminateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L18). Basically [`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) stitches all together _(hooks and operators)_
+[`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) contains the definition for `EC2ExtendedPlugins`'s hooks [`EC2ExtendedHooks`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L16) and operators [`EC2ExtendedCreateInstance`,`EC2ExtendedTerminateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L18). Basically [`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) stitches all together _(hooks and operators)_
 
 ---
 ### `ec2_instance_hooks.py`
 
-[`ec2_instance_hooks.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py) has the class `EC2ExtendedHooks` which has 2 methods
+[`ec2_instance_hooks.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py) has the class `EC2ExtendedHooks` which contains **2 methods**
  - [`create_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L26)
  - [`terminate_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L99)
 ---
-[`create_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L26) takes following inputs as arguments
+[`create_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L26) takes following inputs arguments
 
 | **Arugment Name**  | **Value Type**  | **Default**  | **Required**  |
 |:---:|:---:|:---:|:---:|
@@ -65,8 +65,9 @@ airflow-ec2-plugin-extended
 | `max_count`  | `int`  | `1`  | No  |
 
 And returns the `Instance Object`
+
 ---
-[`terminate_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L99) takes following inputs as arguments
+[`terminate_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L99) takes following inputs arguments
 
 | **Arugment Name**  | **Value Type**  | **Default**  | **Required**  |
 |:---:|:---:|:---:|:---:|
@@ -82,7 +83,7 @@ Once the [`airflow-ec2-plugin-extended`](https://github.com/kodelint/airflow-ec2
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-airflow-ec2-plugin.png)
 
-#### To create instance `dag` code
+#### Create Instance `dag` code snippet
 
 ```python
 from operators.ec2_create_instance import EC2ExtendedCreateInstance
@@ -112,7 +113,7 @@ Above piece of code banks on the operator and creates the `ec2` instance with ar
   <img src=https://github.com/kodelint/blog-assets/raw/main/images/03-airflow-ec2-plugin.png width="470" height="250" />
 </p>
 
-#### To terminate instance `dag` code
+#### Terminate instance `dag` code snippet
 
 ```python
 from operators.ec2_create_instance import EC2ExtendedCreateInstance
