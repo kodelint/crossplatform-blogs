@@ -7,6 +7,7 @@ tags: 'airflow, plugins, python, programming'
 series: null
 canonical_url: null
 id: 1156940
+date: '2022-08-01T21:26:23Z'
 ---
 
 It's been quite some time I have been using [Apache Airflow](https://airflow.apache.org/), we are using **Version:** [`1.10.12`](https://airflow.apache.org/docs/apache-airflow/1.10.12/project.html) for some legacy reasons. May be in future we might be able to upgrade it to latest version [`2.3.3`](https://airflow.apache.org/docs/apache-airflow/stable/start/index.html).
