@@ -38,16 +38,20 @@ airflow-ec2-plugin-extended
 > **TL;DR** the plugin code is available **here -> [`airflow-ec2-plugin-extended`](https://github.com/kodelint/airflow-ec2-plugin-extended)**
 
 ---
+
 ### `ec2_extended_plugins.py`
 [`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) contains the definition for `EC2ExtendedPlugins`'s hooks [`EC2ExtendedHooks`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L16) and operators [`EC2ExtendedCreateInstance`,`EC2ExtendedTerminateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L18). Basically [`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) stitches all together _(hooks and operators)_
 
 ---
+
 ### `ec2_instance_hooks.py`
 
 [`ec2_instance_hooks.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py) has the class `EC2ExtendedHooks` which contains **2 methods**
  - [`create_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L26)
  - [`terminate_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L99)
+
 ---
+
 [`create_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L26) takes following inputs arguments
 
 | **Arugment Name**  | **Value Type**  | **Default**  | **Required**  |
@@ -67,6 +71,7 @@ airflow-ec2-plugin-extended
 And returns the `Instance Object`
 
 ---
+
 [`terminate_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L99) takes following inputs arguments
 
 | **Arugment Name**  | **Value Type**  | **Default**  | **Required**  |
