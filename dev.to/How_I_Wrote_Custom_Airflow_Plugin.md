@@ -39,7 +39,7 @@ airflow-ec2-plugin-extended
 
 ---
 ### `ec2_extended_plugins.py`
-[`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) contains the definition for the `EC2ExtendedPlugins` hooks [`EC2ExtendedHooks`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L16) and operators [`EC2ExtendedCreateInstance`, `EC2ExtendedTerminateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L18). Basically [`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) stitches all together _(hooks and operators)_
+[`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) contains the definition for the `EC2ExtendedPlugins` hooks [`EC2ExtendedHooks`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L16) and operators [`EC2ExtendedCreateInstance`,`EC2ExtendedTerminateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L18). Basically [`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) stitches all together _(hooks and operators)_
 
 ---
 ### `ec2_instance_hooks.py`
