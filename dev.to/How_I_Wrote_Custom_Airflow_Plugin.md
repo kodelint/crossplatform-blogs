@@ -2,10 +2,10 @@
 published: false
 title: AirflowPlugins - How I wrote custom Airflow Plugins
 cover_image: https://github.com/kodelint/blog-assets/raw/main/images/01-airflow.png
-description: How to write a custom Airflow plugin
+description:
 tags: airflow-plugins, python, programming
-series: null
-canonical_url: null
+series:
+canonical_url:
 ---
 
 It's been quite some time I have been using [Apache Airflow](https://airflow.apache.org/), we are using **Version:** [`1.10.12`](https://airflow.apache.org/docs/apache-airflow/1.10.12/project.html) for some legacy reasons. May be in future we might be able to upgrade it to latest version [`2.3.3`](https://airflow.apache.org/docs/apache-airflow/stable/start/index.html).
