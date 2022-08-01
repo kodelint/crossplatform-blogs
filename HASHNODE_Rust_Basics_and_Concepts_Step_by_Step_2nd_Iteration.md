@@ -22,7 +22,7 @@ Rust takes on an alternative approach called **ownership** and **borrowing**. Ow
 
 Let’s look at this code below and the output of it
 
-![](https://github.com/kodelint/blog-images/raw/main/rust/01-rust-function.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-rust-function.png)
 ```
 change the value of i=11
 print the value of i=10, after let_change_the_value_by_one call
@@ -30,13 +30,13 @@ print the value of i=10, after let_change_the_value_by_one call
 
 When we passed the `i` to the function `let_change_the_value_by_one` , increase the value by **1**, print it and when the control goes back to `main()` function and print it, we get the same value as before.
 
-![](https://github.com/kodelint/blog-images/raw/main/rust/01-rust-heap-stack.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-rust-heap-stack.png)
 
 Unlike `strings`, `integers` are stored in **stack** not in **heap** and while passing **i** to the function `let_change_the_value_by_one` compiler make a copy of the value and passes it to the function and actual value remains unchanged. In Terms of **Ownership** variable **i** is the owner of the value in **stack** till it’s scope remains active.
 
 Now, how about we change the variable from `i8` to string what happens than
 
-![](https://github.com/kodelint/blog-images/raw/main/rust/01-rust-function-heap.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-rust-function-heap.png)
 ```
 18 |     let value_for_i = String::from("Rust");
    |----------- move occurs because `value_for_i` has type `String`, which does not implement the `Copy` trait**
@@ -55,13 +55,13 @@ Now when **heap** is involved, the concept of **ownership** will be more transpa
 
 Here is illustration of the same
 
-![](https://github.com/kodelint/blog-images/raw/main/rust/02-rust-heap-stack.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/02-rust-heap-stack.png)
 
 >  In nutshell, any variable in `Rust` within the scope is the owner of the value, it can’t be changed outside of it ownership. The `ownership` needs to be managed manually by the programmer themselves.
 
 To make this code work we can pass this `value_for_i.clone()` to the function and that will create a clone of reference and value
 
-![](https://github.com/kodelint/blog-images/raw/main/rust/03-rust-heap-stack.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/03-rust-heap-stack.png)
 
 However what if we don’t want to transfer the ownership instead we want to modify the same value. How would be achieve that, by using the concept of **Borrowing**
 
@@ -69,7 +69,7 @@ However what if we don’t want to transfer the ownership instead we want to mod
 
 In Rust we can **borrow** the reference of the variable from **stack** and then perform actions on the value in **seap** using the **borrowed** reference. This way we don’t have to deal with ownership transfers at all. To **borrow** the reference of `value_for_i` we use the **borrow** operator `&` , something like this `&value_for_i` and pass it to the function.
 
-![](https://github.com/kodelint/blog-images/raw/main/rust/01-rust-function-borrowing.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-rust-function-borrowing.png)
 ```
 
 print the value of value_for_i=Rust, before lets_change_the_value_of_string call
@@ -89,9 +89,9 @@ print the value of value_for_i=Rust is awesome, after lets_change_the_value_of_s
 
 This explain how we can use borrowing to deal with value where we don’t want to transfer ownership. Though **borrowing** comes with some restriction.
 
-![](https://github.com/kodelint/blog-images/raw/main/rust/01-ownership-and-borrow-limitations.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-ownership-and-borrow-limitations.png)
 
-![](https://github.com/kodelint/blog-images/raw/main/rust/01-ownership-and-borrow-limitations-pic.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-ownership-and-borrow-limitations-pic.png)
 
 We can only create mutable references for a variable only once within its scope. Immutable references has no limitation. Also the compiler will complain if it find a _`dangling references`_, which mean the compiler will make sure _**that data doesn’t go out of scope before it reference does**_.
 

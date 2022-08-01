@@ -2,7 +2,7 @@
 title: SRE DevOps Interview Questions — Linux Troubleshooting Extended
 subtitle: SRE DevOps Interview Questions
 tags: interview, devops, sre, troubleshooting
-cover: https://github.com/kodelint/blog-images/raw/main/common/02-interview-01.jpeg?auto=compress
+cover: https://github.com/kodelint/blog-assets/raw/main/images/02-interview-01.jpeg?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
@@ -69,21 +69,21 @@ So using `read`, for and other internal commands you can use to find out what is
 
 **Question**: Explain the output below and what command produces this?
 
-![](https://github.com/kodelint/blog-images/raw/main/common/02-interview-02.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/02-interview-02.png)
 
 **Question**: Name the fields and what they represents ?
 
 **Question**: Looking at the below output, please explain what is going on in the machine ? Please be as detail and descriptive as possible
 
-![](https://github.com/kodelint/blog-images/raw/main/common/02-interview-03.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/02-interview-03.png)
 
-![](https://github.com/kodelint/blog-images/raw/main/common/02-interview-04.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/02-interview-04.png)
 
 **Question**: Compare above 2 `vmstat` outputs ? and explain the similarities and differences ?
 
 **Question**: What do you understand from below `vmstat` output and what is the relationship between `in` and `cs` column ?
 
-![](https://github.com/kodelint/blog-images/raw/main/common/02-interview-05.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/02-interview-05.png)
 
 **Trick Question**: Looking at `vmstat` can you tell how many CPU and Cores the system has ?
 

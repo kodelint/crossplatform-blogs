@@ -2,7 +2,7 @@
 title: Rust - Basics and Concepts, Step by Step — 1st Iteration
 subtitle: Rust Basic Concepts
 tags: rust, programming
-cover: https://github.com/kodelint/blog-images/raw/main/rust/01-rust.png?auto=compress
+cover: https://github.com/kodelint/blog-assets/raw/main/images/01-rust.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
@@ -218,7 +218,7 @@ fn work_with_strings() {
 ```
 Becomes something like this
 
-![Strings Concatination](https://cdn-images-1.medium.com/max/4276/1*_eznCBCn0jcfMaDHrv6ICQ.jpeg)
+![Strings Concatenation](https://cdn-images-1.medium.com/max/4276/1*_eznCBCn0jcfMaDHrv6ICQ.jpeg)
 
 To reference characters in string using **index**, because strings are valid `UTF-8`, they do not support indexing. We need to use the `.chars()` method. Read more about the Strings [here](https://doc.rust-lang.org/std/string/struct.String.html)
 

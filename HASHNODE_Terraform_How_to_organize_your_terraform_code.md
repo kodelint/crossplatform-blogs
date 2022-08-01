@@ -8,7 +8,7 @@ publishAs: deadl0ck
 ---
 Like any other programming language terraform is also a declarative language to manage your infrastructure. This is how **Hashicorp** defines terraform language
 
-![](https://github.com/kodelint/blog-images/raw/main/common/01-terraform.jpeg)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-terraform.jpeg)
 
 >
 _The Terraform language is declarative, describing an intended goal rather than the steps to reach that goal. The ordering of blocks and the files they are organized into are generally not significant; Terraform only considers implicit and explicit relationships between resources when determining an order of operations._
