@@ -1,7 +1,7 @@
 ---
 published: true
 title: Golang - Struct Tags explained
-cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-Use-Struct-Tags-in-Golang.jpeg'
+cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-Use-Struct-Tags-in-Golang.jpeg'
 description: null
 tags: 'golang, programming'
 series: null
@@ -14,7 +14,7 @@ Today will try to explore **Golang's structure** `tags`. **Structure** or `struc
 
 > _When collection of information are organized in way that they can represented as a unit of information. The defined unit will be able to hold data with similar attributes._
 
-![](https://github.com/kodelint/blog-images/raw/main/common/01-Use-Struct-Tags-in-Golang.jpeg)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-Use-Struct-Tags-in-Golang.jpeg)
 
 #### For Example:
 
@@ -157,6 +157,6 @@ So, instead of writing code for data validations for some of the fundamental and
 
 Hope this give a little more understanding about the **Golang** `Structures` and `Tags`
 
-![](https://github.com/kodelint/blog-images/raw/main/common/02-golang-struct.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/02-golang-struct.png)
 
 ## Happy Coding!!

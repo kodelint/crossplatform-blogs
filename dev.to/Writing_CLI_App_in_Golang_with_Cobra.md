@@ -1,7 +1,7 @@
 ---
 published: true
 title: Golang - Writing CLI App in Golang with Cobra
-cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-golan-cli.jpeg'
+cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-golan-cli.jpeg'
 description: Using Cobra for Golang CLI App
 tags: 'golang, programming'
 id: 1152440
@@ -11,7 +11,7 @@ date: '2022-07-27T02:46:29Z'
 
 Golang has good amount libraries in-build and maintained by community. One of them is [Cobra](https://github.com/spf13/cobra), which is pretty good to write any _**cli apps**_. Today will try to see how we can use the library and what all functionality it provides.
 
-![](https://github.com/kodelint/blog-images/raw/main/common/01-golan-cli.jpeg)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-golan-cli.jpeg)
 
 >The **goal** is to understand how to write a **cli app** in Golang using [Cobra](https://github.com/spf13/cobra). So the app will only print strings for sub-commands executions.*
 

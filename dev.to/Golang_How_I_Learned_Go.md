@@ -1,7 +1,7 @@
 ---
 published: true
 title: Golang - How I learned Go!!
-cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-learn-go.png'
+cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-learn-go.png'
 description: null
 tags: 'golang, programming'
 series: null
@@ -9,7 +9,7 @@ canonical_url: null
 id: 1154032
 ---
 
-![](https://github.com/kodelint/blog-images/raw/main/common/02-learn-go.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/02-learn-go.png)
 
 As **Operations Engineer** I was always a scripting guy, however as I transitioned and adopting **DevOps Culture**. I started spending more time learning _**programming languages**_.
 
@@ -35,7 +35,7 @@ RepositoryList:
       - "v4.5.0"
 ```
 
-So the `YAML` file is organized to provide a **List of Repositories**. I used [**yaml.v2**](http://"gopkg.in/yaml.v2") module, which provides the ability to **encode** and **decode** `YAML` values.
+So the `YAML` file is organized to provide a **List of Repositories**. I used [**yaml.v2**](http://gopkg.in/yaml.v2) module, which provides the ability to **encode** and **decode** `YAML` values.
 
 I would also need a _**data structure**_ to hold the values for me. So I used **Golang** `struct` to define a custom `type` and `variable` to store the data in it. Something like below
 
@@ -90,9 +90,9 @@ if err != nil {
 * `VAULT_APP_ROLE_SECRET_ID`,
 * `VAULT_SECRET_PATH`
 
-I used [“hashicorp/vault/api”](http://"github.com/hashicorp/vault/api") module for the same.
+I used ["hashicorp/vault/api"](http://github.com/hashicorp/vault/api) module for the same.
 
-**3. Connect to Internal and External GitHub APIs**: In order to fetch the external repository and push it internal one I needed to make connection to both external and internal. I used “[**github**](http://"github.com/google/go-github/v38/github")” module accomplish that.
+**3. Connect to Internal and External GitHub APIs**: In order to fetch the external repository and push it internal one I needed to make connection to both external and internal. I used "[**github**](http://github.com/google/go-github/v38/github)" module accomplish that.
 
 **4. Do something with the Data**: Now I have the data stored in `yamlFile` variable, I have the `GitToken` from `Vault`. It’s time to access the data individually and do something with it. Data can be accessed something like this: Because it is **`List`** so I can iterate over it and hold the chunk of data in temporary loop variable `v`
 

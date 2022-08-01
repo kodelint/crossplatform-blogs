@@ -1,7 +1,7 @@
 ---
 published: true
 title: Golang Writing memory efficient and CPU optimized Go Structs
-cover_image: 'https://github.com/kodelint/blog-images/raw/main/common/01-golang-struct.png'
+cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-golang-struct.png'
 description: null
 tags: 'golang, programming'
 series: null
@@ -14,7 +14,7 @@ A struct is a typed collection of fields, useful for grouping data into records.
 
 This blog I will try to explain how we can efficiently write struct in terms of **Memory** **Usages** and **CPU Cycles.**
 
-![](https://github.com/kodelint/blog-images/raw/main/common/01-golang-struct.png)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-golang-struct.png)
 
 Let’s consider this struct below, definition of terraform resource type for some weird use-case I have:
 
@@ -86,13 +86,13 @@ ModuleVersionMajor Field StructType:d.ModuleVersionMajor int32 => [4]
 ```
 So total memory allocation required for the TerraformResource struct is **88 bytes**. This is how the _**memory allocation**_ will look like for TerraformResource type
 
-![](https://github.com/kodelint/blog-images/raw/main/common/01-golang-struct-memory-map.jpeg)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-golang-struct-memory-map.jpeg)
 
 But how come _**88 bytes**_, `16 +16 + 1 + 16 + 1+ 16 + 4` = `70 bytes`, _**where is this additional `18 bytes`**_ coming from ?
 
 When it comes to _**memory allocation**_ for structs, they are always allocated contiguous, byte-aligned blocks of memory, and fields are allocated and stored in the order that they are defined. The concept of **byte-alignment** in this context means that the contiguous blocks of memory are aligned at offsets equal to the platforms word size.
 
-![](https://github.com/kodelint/blog-images/raw/main/common/02-golang-struct-memory-map.jpeg)
+![](https://github.com/kodelint/blog-assets/raw/main/images/02-golang-struct-memory-map.jpeg)
 
 We can clearly see that `TerraformResource.HaveDSL` , `TerraformResource.isVersionControlled` and `TerraformResource.ModuleVersionMajor` are only occupying `1 Byte`, `1 Byte` and `4 Bytes` respectively. Rest of the space is fill with _**empty pad bytes**_.
 
@@ -174,7 +174,7 @@ ModuleVersionMajor Field StructType:d.ModuleVersionMajor int32 => [4]
 
 Now total _**memory allocation**_ for the `TerraformResource` type is `72 bytes`. Let’s see how the memory alignments looks likes
 
-![](https://github.com/kodelint/blog-images/raw/main/common/03-golang-struct-memory-map.jpeg)
+![](https://github.com/kodelint/blog-assets/raw/main/images/03-golang-struct-memory-map.jpeg)
 
 Just by doing proper _**data structure alignment**_ for the struct elements we were able to reduce the memory footprint from `88 bytes` to `72 bytes`**....Sweet!!**
 
@@ -189,11 +189,11 @@ Proper _**data structure alignment**_ not only helps us use _**memory efficientl
 
 CPU Reads memory in _**words**_ which is _**`4 bytes`**_ on a _**`32-bit`**_, _**`8 bytes`**_ on a _**`64-bit`**_ systems. Now our first declaration of struct type TerraformResource will take  `11 Words` for CPU to read everything
 
-![](https://github.com/kodelint/blog-images/raw/main/common/01-golang-struct-word-length.jpeg)
+![](https://github.com/kodelint/blog-assets/raw/main/images/01-golang-struct-word-length.jpeg)
 
 However the **optimized** struct will only take `9 Words` as shown below
 
-![](https://github.com/kodelint/blog-images/raw/main/common/02-golang-struct-word-length.jpeg)
+![](https://github.com/kodelint/blog-assets/raw/main/images/02-golang-struct-word-length.jpeg)
 
 By defining out struct properly data structured aligned we were able to use _**memory allocation efficiently**_ and made the struct _**fast and efficient in terms of CPU Reads**_ as well.
 
