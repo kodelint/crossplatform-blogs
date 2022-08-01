@@ -37,15 +37,17 @@ airflow-ec2-plugin-extended
 ```
 > **TL;DR** the plugin code is available **here -> [`airflow-ec2-plugin-extended`](https://github.com/kodelint/airflow-ec2-plugin-extended)**
 
+---
 ### `ec2_extended_plugins.py`
-
 [`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) contains the definition for the `EC2ExtendedPlugins` hooks [`EC2ExtendedHooks`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L16) and operators [`EC2ExtendedCreateInstance`, `EC2ExtendedTerminateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py#L18). Basically [`ec2_extended_plugins.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/ec2_extended_plugins.py) stitches all together _(hooks and operators)_
 
+---
 ### `ec2_instance_hooks.py`
+
 [`ec2_instance_hooks.py`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py) has the class `EC2ExtendedHooks` which has 2 methods
  - [`create_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L26)
  - [`terminate_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L99)
-
+---
 [`create_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L26) takes following inputs as arguments
 
 | **Arugment Name**  | **Value Type**  | **Default**  | **Required**  |
@@ -63,7 +65,7 @@ airflow-ec2-plugin-extended
 | `max_count`  | `int`  | `1`  | No  |
 
 And returns the `Instance Object`
-
+---
 [`terminate_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L99) takes following inputs as arguments
 
 | **Arugment Name**  | **Value Type**  | **Default**  | **Required**  |
@@ -71,9 +73,9 @@ And returns the `Instance Object`
 | `instance_id` | `string`  | None  | Yes  |
 | `region_name` | `string`  | None  | Yes  |
 
-And returns nothing
+And returns **nothing**. Both [`create_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L26) and [`terminate_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L99) are powered by the operator classes [`EC2ExtendedCreateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/operators/ec2_create_instance.py#L8) and [`EC2ExtendedTerminateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/operators/ec2_terminate_instance.py#L7) which inherits the [`BaseOperator`](https://airflow.apache.org/docs/apache-airflow/1.10.12/_api/airflow/models/baseoperator/index.html) for native functionality.
 
-Both [`create_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L26) and [`terminate_instance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/hooks/ec2_instance_hooks.py#L99) are powered by the operator classes [`EC2ExtendedCreateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/operators/ec2_create_instance.py#L8) and [`EC2ExtendedTerminateInstance`](https://github.com/kodelint/airflow-ec2-plugin-extended/blob/main/operators/ec2_terminate_instance.py#L7) which inherits the [`BaseOperator`](https://airflow.apache.org/docs/apache-airflow/1.10.12/_api/airflow/models/baseoperator/index.html) for native functionality.
+---
 
 ### How to use
 Once the [`airflow-ec2-plugin-extended`](https://github.com/kodelint/airflow-ec2-plugin-extended) Plugin is installed and the `dag` is enabled you will see something like this in **Airflow Graph View**
@@ -139,6 +141,6 @@ So, we are fetching first element of the `List[str]` as we need the `instance_id
 
 Here is the **[example dag](https://github.com/kodelint/airflow-ec2-plugin-extended#example-dag)** for the same.
 
-Hope this helps to provide some understanding how we can write some custom [Apache Airflow](https://airflow.apache.org/), we are using **Version:** [`1.10.12`](https://airflow.apache.org/docs/apache-airflow/1.10.12/project.html) plugins if we need one.
+Hope this helps to provide some understanding how we can write some custom [Apache Airflow](https://airflow.apache.org/) plugins if we need one.
 
 ## Happy Coding!!
