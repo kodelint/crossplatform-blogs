@@ -91,7 +91,7 @@ Above we have struct `Car` with generic type _(denoted using `<..>`)_ `<S,I,T>` 
 One more thing I want touch is the **Box datatype** in rust . **Box** datatype are usually used to put the data in **heap** instead of **stack**. In simple words **stack** are usually small in size and when you are storing data which can be large in size like a `trait` or `struct` _(combination of different datatypes and sizes)_, you might want to store them in **heap** and have reference of that stored in **stack**
 >  **Note**: If you are making the data to be **boxed**, means moving it from **stack** to **heap** using `box datatype`. It performs the **move** operation, not **copy**, so previous location in **stack** gets **de-allocated**.
 
-<img src="https://github.com/kodelint/blog-assets/raw/main/images/01-rust-struct-box-type.jpg" width="1100" height="1800" />
+<img src="https://github.com/kodelint/blog-assets/raw/main/images/01-rust-struct-box-type.jpg"/>
 
 ```bash
 I bought Model X in 2021 for $120000, it is an electric Vehicle
