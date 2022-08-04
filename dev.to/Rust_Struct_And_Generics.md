@@ -1,11 +1,12 @@
 ---
 published: false
-title: Rust - Struct, Generics
+title: 'Rust - Struct, Generics'
 cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-rust-struct.jpg'
 description: null
 tags: 'rust, programming'
 series: null
 canonical_url: null
+id: 1159567
 ---
 
 Let’s talk about the some custom **data types** in **Rust** like `struct` and `emuns` . We all know why need **custom data type**, like any other language regular data type may not suffice the need and hence we have custom data types.
