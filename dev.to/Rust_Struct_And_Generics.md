@@ -76,6 +76,7 @@ Price of Tesla Model Y has increased to $75000/-
 Car Name: Beast, Model: Tesla Plaid, Year: 2022, Price: $110000/-
 Price of Tesla Plaid has increased to $135000/-
 ```
+
 ### Generic Types … Yay!!
 
 Rust is **statically** type language so a defined `struct`, `function` or `method` can only be used for it own defined variable data types. Which mean you might end up maintaining same code body for `struct`, `function` or `method` with different data types. What if we can define `struct`, `function` or `method` in such a way that we can use any data type with it. Enters…..**Generic Type!!**
