@@ -7,6 +7,7 @@ tags: 'rust, programming'
 series: null
 canonical_url: null
 id: 1159567
+date: '2022-08-05T16:51:19Z'
 ---
 
 Let’s talk about the some custom **data types** in **Rust** like `struct` and `emuns` . We all know why need **custom data type**, like any other language regular data type may not suffice the need and hence we have custom data types.
