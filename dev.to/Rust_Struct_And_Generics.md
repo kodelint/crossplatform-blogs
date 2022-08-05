@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: 'Rust - Struct, Generics'
 cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-rust-struct.jpg'
 description: null
