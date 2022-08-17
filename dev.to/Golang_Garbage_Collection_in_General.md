@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: "Golang - Garbage Collection in\_General"
 cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-golang-garbage-collection-header.png'
 description: null
