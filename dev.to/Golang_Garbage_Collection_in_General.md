@@ -7,6 +7,7 @@ tags: 'golang, programming'
 series: null
 canonical_url: null
 id: 1169201
+date: '2022-08-17T02:24:56Z'
 ---
 As we all know the `golang` is a **garbage collected** language like other languages like `java`, `python` , `C#` etc. **`Golang`** is a statically typed ***garbage collected language.***
 
