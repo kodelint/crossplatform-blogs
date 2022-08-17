@@ -25,13 +25,13 @@ Above code has a `RandomBox` **type** and `GenerateRandomBox()` is a **function*
 When the reference goes away, we end up with **Garbage**. This is how we get **Garbage**, which requires to be clean up time to time.
 >  When the program memory footprint reaches a certain threshold, the whole application will be suspended, the **Garbage Collector** scans all the objects assigned memory space and recycling are no longer used, after the end of this process, the user program can continue, the language also use this strategy implement garbage collection in the early days, but today’s implementation is much complicated
 
-**Garbage collection** can be initiated manually or automatically depending on the programming language you are using. Every program compiler or interpreter uses a specific algorithm to perform **Garbage collection**. **Garbage collection** in a compiled language works the same way as in an interpreted language.
+**Garbage collection** can be initiated manually or automatically depending on the programming language you are using. Every program `compiler` or `interpreter` uses a specific algorithm to perform **Garbage collection**. **Garbage collection** in a `compiled` language works the same way as in an `interpreted` language.
 
-Golang use **[Tracing garbage](https://en.wikipedia.org/wiki/Tracing_garbage_collection)** collectors even though their code is usually compiled to machine code ahead-of-time. Go uses a **concurrent mark and sweep garbage collector** algorithm.
+`Golang` use **[Tracing garbage](https://en.wikipedia.org/wiki/Tracing_garbage_collection)** collectors even though their code is usually compiled to machine code ahead-of-time. Go uses a **concurrent mark and sweep garbage collector** algorithm.
 
 ### What happens in Garbage Collection Process
 
-Go’s **garbage collector** is called ***concurrent*** because it can safely run in parallel with the main program. When compiler decides that this is the time to run **garbage collection** based on some _**condition**_ (discussed below), this is what it follows
+`Go`’s **garbage collector** is called _**concurrent**_ because it can safely run in parallel with the main program. When compiler decides that this is the time to run **garbage collection** based on some _**condition**_ (discussed below), this is what it follows
 
 #### Mark Setup
 
