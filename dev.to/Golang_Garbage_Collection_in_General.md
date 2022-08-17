@@ -7,7 +7,6 @@ tags: 'golang, programming'
 series: null
 canonical_url: null
 ---
-
 As we all know the `golang` is a **garbage collected** language like other languages like `java`, `python` , `C#` etc. **`Golang`** is a statically typed ***garbage collected language.***
 
 ### What is Garbage Collection and Why it is needed
