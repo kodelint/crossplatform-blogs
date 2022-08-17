@@ -1,11 +1,12 @@
 ---
 published: false
-title: Golang - Garbage Collection in General
+title: "Golang - Garbage Collection in\_General"
 cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-golang-garbage-collection-header.png'
 description: null
 tags: 'golang, programming'
 series: null
 canonical_url: null
+id: 1169201
 ---
 As we all know the `golang` is a **garbage collected** language like other languages like `java`, `python` , `C#` etc. **`Golang`** is a statically typed ***garbage collected language.***
 
