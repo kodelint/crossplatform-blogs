@@ -1,7 +1,7 @@
 ---
 title: "Git Selective Ignore: Because Sometimes You Need to Keep Secrets from Git (But Not From Yourself)"
 subtitle: gi-selective-ignore
-tags: rust, git, productivity
+tags: rust, git, productivity, cli
 coverImage: "https://raw.githubusercontent.com/kodelint/blog-images/refs/heads/main/common/01-git-selecting-ignore.png"
 domain: sroy.hashnode.dev
 publishAs: deadl0ck

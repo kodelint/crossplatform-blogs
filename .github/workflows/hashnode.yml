@@ -16,5 +16,5 @@ jobs:
       - name: Publish to Hashnode
         uses: PritishMishraa/hashnode-publish-action@v1.0.2
         with:
-          src: hashnode
+          src: crossplatform-blogs/posts/hashnode
           HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
