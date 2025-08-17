@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Publish to Hashnode
-        uses: PritishMishraa/hashnode-publish-action@v1.0.2
+        uses: harshith-venkatesh/hashnode-publish-action@v1.0.0
         with:
-          src: ./posts/hashnode
-          HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
+          HASHNODE_API_KEY: ${{ secrets.HASHNODE_PAT }}
+          DIR: ./posts/hashnode
