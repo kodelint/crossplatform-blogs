@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "posts/**.md"
+      - "posts/**/**.md"
 
 jobs:
   publish:
@@ -18,7 +18,7 @@ jobs:
         id: changes
         uses: tj-actions/changed-files@v44
         with:
-          files: posts/**.md
+          files: posts/**/**.md
 
       - name: Show changed files (debug)
         run: echo "${{ steps.changes.outputs.all_changed_files }}"
