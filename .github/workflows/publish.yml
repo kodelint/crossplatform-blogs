@@ -49,4 +49,3 @@ jobs:
           supported-formats: md
           access-token: ${{ secrets.HASHNODE_TOKEN }}
           publication-id: ${{ secrets.HASHNODE_PUBLICATION_ID }}
-          files: ${{ steps.changes.outputs.all_changed_files }}
