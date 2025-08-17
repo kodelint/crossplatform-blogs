@@ -8,6 +8,8 @@ tags:
 coverImage: "https://raw.githubusercontent.com/kodelint/blog-images/refs/heads/main/common/01-git-selecting-ignore.png"
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
+
+
 ---
 
 # Git Selective Ignore: Because Sometimes You Need to Keep Secrets from Git (But Not From Yourself)
