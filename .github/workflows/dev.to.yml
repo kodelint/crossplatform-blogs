@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - "posts/dev.to/**.md"
-      - "posts/hashnode/**.md"
 
 jobs:
   publish:
@@ -21,7 +20,6 @@ jobs:
         with:
           files: |
             posts/dev.to/**.md
-            posts/hashnode/**.md
 
       - name: Debug changed files
         run: echo "${{ steps.changes.outputs.all_changed_files }}"
@@ -35,11 +33,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           files: ${{ steps.changes.outputs.all_changed_files }}
           branch: main
-
-      # Hashnode publishing (publishes all in folder if any change detected)
-      - name: Publish to Hashnode
-        if: contains(steps.changes.outputs.all_changed_files, 'posts/hashnode/')
-        uses: PritishMishraa/hashnode-publish-action@v1.0.2
-        with:
-          src: posts/hashnode
-          HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}

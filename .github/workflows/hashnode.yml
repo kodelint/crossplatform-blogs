@@ -1,0 +1,21 @@
+name: Publish to Hashnode
+
+on:
+  push:
+    branches:
+      - main # or master if that's your default branch
+    paths:
+      - "posts/hashnode/**" # only trigger if posts change
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Publish to Hashnode
+        uses: PritishMishraa/hashnode-publish-action@v1.0.2
+        with:
+          src: ./posts/hashnode
+          HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
