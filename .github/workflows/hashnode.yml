@@ -13,8 +13,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Symlink posts directory
+      - name: Create required directories and symlink
         run: |
+          mkdir -p /home/runner/work/_actions/PritishMishraa/hashnode-publish-action/v1.0.2/posts
           ln -s ${{ github.workspace }}/posts/hashnode /home/runner/work/_actions/PritishMishraa/hashnode-publish-action/v1.0.2/posts/hashnode
 
       - name: Publish to Hashnode
