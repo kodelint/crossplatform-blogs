@@ -1,0 +1,40 @@
+name: Publish Blog Posts
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "posts/**.md"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get changed files
+        id: changes
+        uses: tj-actions/changed-files@v44
+        with:
+          files: posts/**.md
+
+      - name: Show changed files (debug)
+        run: echo "${{ steps.changes.outputs.all_changed_files }}"
+
+      - name: Publish to Dev.to
+        if: steps.changes.outputs.all_changed_files != ''
+        uses: sinedied/publish-devto@v2
+        with:
+          devto_key: ${{ secrets.DEVTO_TOKEN }}
+          github_token: ${{ secrets.BLOG_POST_TOKEN_GITHUB }}
+          files: ${{ steps.changes.outputs.all_changed_files }}
+          branch: main
+
+      - name: Publish to Hashnode
+        if: steps.changes.outputs.all_changed_files != ''
+        uses: PritishMishraa/hashnode-publish-action@v1.0.2
+        with:
+          src: ${{ steps.changes.outputs.all_changed_files }}
+          HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
