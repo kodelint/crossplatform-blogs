@@ -26,21 +26,27 @@ jobs:
       - name: Show changed files (debug)
         run: echo "${{ steps.changes.outputs.all_changed_files }}"
 
+      # --------------------------
       # Publish to Dev.to
+      # --------------------------
       - name: Publish to Dev.to
         if: contains(steps.changes.outputs.all_changed_files, 'posts/dev.to/')
         uses: sinedied/publish-devto@v2
         with:
           devto_key: ${{ secrets.DEVTO_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          files: |
-            posts/dev.to/**/*.md
+          files: ${{ steps.changes.outputs.all_changed_files }}
           branch: main
 
+      # --------------------------
       # Publish to Hashnode
+      # --------------------------
       - name: Publish to Hashnode
         if: contains(steps.changes.outputs.all_changed_files, 'posts/hashnode/')
-        uses: PritishMishraa/hashnode-publish-action@v1.0.2
+        uses: prettyirrelevant/hashnode-posts-publisher@v0.1.3
         with:
-          src: posts/hashnode
-          HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
+          posts-directory: ${{ github.workspace }}/posts/hashnode
+          supported-formats: md
+          access-token: ${{ secrets.HASHNODE_TOKEN }}
+          publication-id: ${{ secrets.HASHNODE_PUBLICATION_ID }}
+          files: ${{ steps.changes.outputs.all_changed_files }}
