@@ -13,8 +13,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Copy files for Hashnode Action
+        run: cp -r posts/hashnode /home/runner/work/_actions/PritishMishraa/hashnode-publish-action/v1.0.2/
+
       - name: Publish to Hashnode
         uses: PritishMishraa/hashnode-publish-action@v1.0.2
         with:
-          src: ${{ github.workspace }}/posts/hashnode
+          src: posts/hashnode
           HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
