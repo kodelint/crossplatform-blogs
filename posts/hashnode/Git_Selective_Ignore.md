@@ -1,6 +1,6 @@
 ---
 title: "Git Selective Ignore: Because Sometimes You Need to Keep Secrets from Git (But Not From Yourself)"
-subtitle: gi-selective-ignore
+subtitle: git-selective-ignore
 tags:
   - rust
   - git
