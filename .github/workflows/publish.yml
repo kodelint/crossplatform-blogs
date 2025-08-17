@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - "posts/**/**.md"
+      - "posts/dev.to/**.md"
+      - "posts/hashnode/**.md"
 
 jobs:
   publish:
@@ -18,23 +19,28 @@ jobs:
         id: changes
         uses: tj-actions/changed-files@v44
         with:
-          files: posts/**/**.md
+          files: |
+            posts/dev.to/**.md
+            posts/hashnode/**.md
 
       - name: Show changed files (debug)
         run: echo "${{ steps.changes.outputs.all_changed_files }}"
 
+      # Publish to Dev.to
       - name: Publish to Dev.to
-        if: steps.changes.outputs.all_changed_files != ''
+        if: contains(steps.changes.outputs.all_changed_files, 'posts/dev.to/')
         uses: sinedied/publish-devto@v2
         with:
           devto_key: ${{ secrets.DEVTO_TOKEN }}
-          github_token: ${{ secrets.BLOG_POST_TOKEN_GITHUB }}
-          files: ${{ steps.changes.outputs.all_changed_files }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            posts/dev.to/**/*.md
           branch: main
 
+      # Publish to Hashnode
       - name: Publish to Hashnode
-        if: steps.changes.outputs.all_changed_files != ''
+        if: contains(steps.changes.outputs.all_changed_files, 'posts/hashnode/')
         uses: PritishMishraa/hashnode-publish-action@v1.0.2
         with:
-          src: ${{ steps.changes.outputs.all_changed_files }}
+          src: posts/hashnode
           HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}

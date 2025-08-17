@@ -11,9 +11,9 @@ publishAs: deadl0ck
 
 _Or: How I Learned to Stop Worrying and Love Committing Without Fear_
 
-**Picture this:** It's 2 AM, you're deep in the coding zone, your coffee has gone cold (again), and you've just figured out why your API integration wasn't working. You quickly hardcode that API key to test it out—just temporarily, of course. The fix works! You're ecstatic. You commit your changes with a triumphant message: "Fixed the thing that was broken!"
+**Picture this:** It's **2 AM**, you're deep in the coding zone, your coffee has gone cold (again), and you've just figured out why your API integration wasn't working. You quickly hardcode that API key to test it out—just temporarily, of course. The fix works! You're ecstatic. You commit your changes with a triumphant message: "Fixed the thing that was broken!"
 
-Fast forward to 9 AM the next day. Your security team is having what can only be described as a "spirited discussion" about API keys appearing in your Git history. Your coffee is cold again, but this time it's because your blood has turned to ice.
+Fast forward to **9 AM** the next day. Your security team is having what can only be described as a "spirited discussion" about API keys appearing in your Git history. Your coffee is cold again, but this time it's because your blood has turned to ice.
 
 Sound familiar? Welcome to the club. We have t-shirts, but ironically, we can't put the design in our Git repo because it has our logo's secret color codes in it.
 
