@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "posts/hashnode/**"
 
 jobs:
   publish:
@@ -14,5 +16,5 @@ jobs:
       - name: Publish to Hashnode
         uses: PritishMishraa/hashnode-publish-action@v1.0.2
         with:
-          src: posts/hashnode
+          src: hashnode
           HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
