@@ -1,8 +1,8 @@
 ---
 title: Dev Setup on Autopilot
-cover_image: 'https://raw.githubusercontent.com/kodelint/kodelint.github.io/refs/heads/main/assets/uploads/01-setup-devbox.png'
+cover_image: "https://raw.githubusercontent.com/kodelint/kodelint.github.io/refs/heads/main/assets/uploads/01-setup-devbox.png"
 description: null
-tags: 'rust, macOS, productivity, cli'
+tags: "rust, macOS, productivity, cli"
 id: 2781676
 ---
 
@@ -12,7 +12,7 @@ Every developer knows the ritual. A new laptop arrives shiny, fast, and brimming
 
 For years, I’ve lived this saga. Like many of you, I have my carefully curated arsenal of tools, fonts, and configurations that make me productive. My terminal needs to look just right, my version managers must be in place, and a dozen specific CLI utilities are non-negotiable.
 
-## The Deja Vu of Re-Setup
+### The Deja Vu of Re-Setup
 
 The problem isn’t just the initial setup; it’s the **memory** part. I’d spend hours, sometimes days, painstakingly recalling, searching, and reinstalling. Let me give you some concrete examples of the frustration:
 
@@ -31,13 +31,13 @@ This constant “re-setup tax” was a major pain point, a recurring nightmare t
 
 ---
 
-## My Solution: Introducing `setup-devbox`
+### My Solution: Introducing `setup-devbox`
 
 That frustration finally boiled over, and I decided to tackle it head-on. I focused on a piece of software that solves this exact problem: [`setup-devbox`](https://github.com/kodelint/setup-devbox).
 
 [`setup-devbox`](https://github.com/kodelint/setup-devbox) is my answer to the "new laptop dilemma." It’s a command-line tool that lets you define your entire development environment in **declarative `YAML` files**. This isn't just about listing tools; it's about stating the **desired end-state** of your machine, which is repeatable every single time, in a format that's both human-readable and machine-executable.
 
-### Why Declarative `YAML`?
+#### Why Declarative `YAML`?
 
 The power of declarative YAML is that it acts as your single source of truth. It lives alongside your code in version control, meaning:
 
@@ -46,7 +46,7 @@ The power of declarative YAML is that it acts as your single source of truth. It
 - **Shareability:** Want to onboard a new team member to an identical setup? Share your [`setup-devbox`](https://github.com/kodelint/setup-devbox) config files.
 - **No More Guesswork:** No more trying to remember a specific brew flag or the exact go install command. The `YAML` specifies it all.
 
-### What [`setup-devbox`](https://github.com/kodelint/setup-devbox) Manages:
+#### What [`setup-devbox`](https://github.com/kodelint/setup-devbox) Manages:
 
 When you define your environment, [`setup-devbox`](https://github.com/kodelint/setup-devbox) steps up to handle the heavy lifting across several crucial domains:
 
@@ -61,7 +61,7 @@ When you define your environment, [`setup-devbox`](https://github.com/kodelint/s
 
 At present it support **GitHub, Brew, Cargo, Rustup, Go, Pip** and **Direct URL**.
 
-#### Here are examples of my `tools.yaml`
+**Here are examples of my `tools.yaml`**
 
 ```yaml
 - name: git-spellcheck
@@ -90,7 +90,7 @@ At present it support **GitHub, Brew, Cargo, Rustup, Go, Pip** and **Direct URL*
   rename_to: delta
 ```
 
-#### Example of `fonts.yaml`
+**Example of `fonts.yaml`**
 
 ```yaml
 fonts:
@@ -103,7 +103,7 @@ fonts:
   Example of shellrc.yaml
 ```
 
-#### Example of `shellrc.yaml`
+**Example of `shellrc.yaml`**
 
 ```yaml
 shellrc:
@@ -116,12 +116,10 @@ shellrc:
    - "[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh"
    - zle -N fzf-history-widget - bindkey '^R' fzf-history-widget
    - 'export FZF_CTRL_R_OPTS="--no-preview --scheme=history --tiebreak=index   --bind=ctrl-r:toggle-sort"'
-   - |
-   export FZF_CTRL_T_OPTS="
-  --preview 'bat --style=numbers --color=always {} || cat {}'
-  --preview-window=right:80%
-  --bind ctrl-b:preview-page-up,ctrl-f:preview-page-down"
-
+   - | export FZF_CTRL_T_OPTS="
+      --preview 'bat --style=numbers --color=always {} || cat {}'
+      --preview-window=right:80%
+      --bind ctrl-b:preview-page-up,ctrl-f:preview-page-down"
 aliases:
     - name: code
       value: cd $HOME/Documents/github/
@@ -134,6 +132,8 @@ aliases:
     - name: gs
       value: g status
 ```
+
+**Example of `settings.yaml`**
 
 ```yaml
 settings:
@@ -160,7 +160,7 @@ settings:
       type: bool
 ```
 
-### The Magic of State Management
+#### The Magic of State Management
 
 The core idea is simple yet powerful: you run `setup-devbox now`, and it springs into action. But it's not a dumb script that reinstalls everything every time. It leverages an internal `state.json` file. This file acts as `setup-devbox`'s memory, keeping track of what has already been installed and configured, and how.
 
@@ -174,7 +174,7 @@ This means that:
 
 This means that whether I’m upgrading my MacBook, spinning up a new virtual machine, or onboarding onto a client’s specific environment, I can replicate my ideal setup with minimal effort. The entire “re-setup tax” is almost eliminated, freeing me up to do what I love: **develop**.
 
-## Reclaim Your Setup Time, Forever
+### Reclaim Your Setup Time, Forever
 
 Building [`setup-devbox`](https://github.com/kodelint/setup-devbox) has transformed my personal development workflow from a recurring chore into a one-command automation. My development environment is no longer a collection of scattered memories and manual steps; it’s a declarative, version-controlled blueprint that setup-devbox brings to life with intelligent efficiency.
 
@@ -182,6 +182,6 @@ If you, like me, have suffered the “**new laptop setup**” headache too many 
 
 Head over to the GitHub Repository: [`setup-devbox`](https://github.com/kodelint/setup-devbox), explore the configuration examples, and give [`setup-devbox`](https://github.com/kodelint/setup-devbox) a try. I'm actively developing it, and your feedback, ideas, or even contributions would be incredibly valuable.
 
-### Repository: [`setup-devbox`](https://github.com/kodelint/setup-devbox)
+#### Repository: [`setup-devbox`](https://github.com/kodelint/setup-devbox)
 
-### Happy Developing!!
+#### Happy Developing!!
