@@ -3,7 +3,6 @@ title: Dev Setup on Autopilot
 cover_image: "https://raw.githubusercontent.com/kodelint/kodelint.github.io/refs/heads/main/assets/uploads/01-setup-devbox.png"
 description: null
 tags: "rust, macOS, productivity, cli"
-id: 2781676
 series: null
 canonical_url: null
 published: null
