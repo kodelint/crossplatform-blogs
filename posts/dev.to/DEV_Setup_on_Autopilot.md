@@ -1,14 +1,14 @@
 ---
 title: Dev Setup on Autopilot
-cover_image: 'https://raw.githubusercontent.com/kodelint/kodelint.github.io/refs/heads/main/assets/uploads/01-setup-devbox.png'
+cover_image: "https://raw.githubusercontent.com/kodelint/kodelint.github.io/refs/heads/main/assets/uploads/01-setup-devbox.png"
 description: null
-tags: 'rust, macOS, productivity, cli'
+tags: "rust, macOS, productivity, cli"
 id: 2781676
 ---
 
 ## Dev Setup on Autopilot
 
-Every developer knows the ritual. A new laptop arrives shiny, fast, and brimming with potential. Or perhaps you’re upgrading your existing machine, or starting a new role with a fresh corporate setup. The excitement is palpable, but then reality hits: the painstaking process of recreating your perfect development environment.
+Every developer knows the ritual. A new laptop arrives shiny, fast, and brimming with potential. Or perhaps you’re upgrading your existing machine, or starting a new role with a fresh corporate setup. The excitement is palpable, but then reality hits: the painstaking process of recreating your **perfect development environment**.
 
 For years, I’ve lived this saga. Like many of you, I have my carefully curated arsenal of tools, fonts, and configurations that make me productive. My terminal needs to look just right, my version managers must be in place, and a dozen specific CLI utilities are non-negotiable.
 

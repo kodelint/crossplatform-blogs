@@ -33,3 +33,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           files: ${{ steps.changes.outputs.all_changed_files }}
           branch: main
+          dry_run: false
