@@ -1,13 +1,13 @@
 ---
 published: true
-title: "Git Selective Ignore: Because Sometimes You Need to Keep Secrets from Git (But Not From Yourself)"
-cover_image: "https://raw.githubusercontent.com/kodelint/blog-images/refs/heads/main/common/01-git-selecting-ignore.png"
+title: 'Git Selective Ignore: Because Sometimes You Need to Keep Secrets from Git (But Not From Yourself)'
+cover_image: 'https://raw.githubusercontent.com/kodelint/blog-images/refs/heads/main/common/01-git-selecting-ignore.png'
 description: null
-tags: "rust, git, productivity, cli"
+tags: 'rust, git, productivity, cli'
 series: null
 canonical_url: null
 id: 1169201
-date: "2022-08-17T02:24:56Z"
+date: '2022-08-17T02:24:56Z'
 ---
 
 # Git Selective Ignore: Because Sometimes You Need to Keep Secrets from Git (But Not From Yourself)
