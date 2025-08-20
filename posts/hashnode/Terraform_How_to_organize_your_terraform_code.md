@@ -5,7 +5,8 @@ tags:
   - terraform
   - DevOps
   - automation
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1658858063654/VhRlPzPVp.jpeg?auto=compress
+publishedAt: 2022-03-01
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1658858063654/VhRlPzPVp.jpeg?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---

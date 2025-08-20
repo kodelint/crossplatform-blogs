@@ -5,7 +5,8 @@ tags:
   - golang
   - programming
   - concepts
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1658967846184/kZRA8oSG3.jpeg?auto=compress
+publishedAt: 2022-03-07
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1658967846184/kZRA8oSG3.jpeg?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---

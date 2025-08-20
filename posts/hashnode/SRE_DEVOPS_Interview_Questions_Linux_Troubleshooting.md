@@ -6,7 +6,8 @@ tags:
   - devops
   - sre
   - troubleshooting
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1658350256075/Qe6ZpmMxX.png?auto=compress
+publishedAt: 2022-04-07
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1658350256075/Qe6ZpmMxX.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---

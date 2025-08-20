@@ -6,7 +6,8 @@ tags:
   - devops
   - sre
   - troubleshooting
-cover: https://github.com/kodelint/blog-assets/raw/main/images/02-interview-01.jpeg?auto=compress
+publishedAt: 2022-05-05
+coverImage: https://github.com/kodelint/blog-assets/raw/main/images/02-interview-01.jpeg?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---

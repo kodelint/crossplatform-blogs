@@ -6,7 +6,8 @@ tags:
   - plugins
   - python
   - programming
-cover: https://github.com/kodelint/blog-assets/raw/main/images/01-airflow.png?auto=compress
+publishedAt: 2022-02-15
+coverImage: https://github.com/kodelint/blog-assets/raw/main/images/01-airflow.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---

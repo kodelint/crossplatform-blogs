@@ -5,7 +5,8 @@ tags:
   - rust
   - programming
   - concepts
-cover: https://github.com/kodelint/blog-assets/raw/main/images/01-rust.png?auto=compress
+publishedAt: 2022-07-02
+coverImage: https://github.com/kodelint/blog-assets/raw/main/images/01-rust.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
