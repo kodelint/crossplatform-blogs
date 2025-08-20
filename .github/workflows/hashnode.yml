@@ -16,7 +16,7 @@ jobs:
       - name: Publish to Hashnode
         uses: kodelint/publish-to-hashnode@v1.0.1
         with:
-          src: "./posts"
+          src: "./posts/hashnode"
           hashnode_pat: ${{ secrets.HASHNODE_PAT }}
           publication_id: ${{ secrets.HASHNODE_PUBLICATION_ID }}
           post_status: "public"
