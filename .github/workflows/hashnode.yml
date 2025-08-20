@@ -3,7 +3,7 @@ name: Publish to Hashnode
 on:
   push:
     branches: [main]
-    paths: ["posts/hashnode/*.md"] # Only run when markdown files in posts/ change
+    paths: ["posts/**/*.md"] # Only run when markdown files in posts/ change
 
 jobs:
   publish:
