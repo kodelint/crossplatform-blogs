@@ -1,25 +1,23 @@
 name: Publish to Hashnode
+
 on:
   push:
-    branches:
-      - main
-    paths:
-      - "posts/hashnode/**"
+    branches: [main]
+    paths: ["posts/hashnode/*.md"] # Only run when markdown files in posts/ change
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
 
-      - name: Create required directories and symlink
-        run: |
-          mkdir -p /home/runner/work/_actions/PritishMishraa/hashnode-publish-action/v1.0.2/posts
-          ln -s ${{ github.workspace }}/posts/hashnode /home/runner/work/_actions/PritishMishraa/hashnode-publish-action/v1.0.2/posts/hashnode
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Publish to Hashnode
-        uses: PritishMishraa/hashnode-publish-action@v1.0.2
+        uses: kodelint/publish-to-hashnode@v1
         with:
-          src: posts/hashnode
-          HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
+          src: "./posts"
+          hashnode_pat: ${{ secrets.HASHNODE_PAT }}
+          publication_id: ${{ secrets.HASHNODE_PUBLICATION_ID }}
+          post_status: "public"
+          update_existing_posts: "true"
