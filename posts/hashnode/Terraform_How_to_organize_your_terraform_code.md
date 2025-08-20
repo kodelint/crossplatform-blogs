@@ -1,21 +1,24 @@
 ---
 title: Terraform How to organize your terraform code
 subtitle: Terraform
-tags: terraform, DevOps
+tags:
+  - terraform
+  - DevOps
+  - automation
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1658858063654/VhRlPzPVp.jpeg?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
+
 Like any other programming language terraform is also a declarative language to manage your infrastructure. This is how **Hashicorp** defines terraform language
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-terraform.jpeg)
 
->
-_The Terraform language is declarative, describing an intended goal rather than the steps to reach that goal. The ordering of blocks and the files they are organized into are generally not significant; Terraform only considers implicit and explicit relationships between resources when determining an order of operations._
+> _The Terraform language is declarative, describing an intended goal rather than the steps to reach that goal. The ordering of blocks and the files they are organized into are generally not significant; Terraform only considers implicit and explicit relationships between resources when determining an order of operations._
 
 In terraform all your code can be in just one file ending with `.tf` extension and it will perform as expected. However let take look at the _blocks_ , _expressions_ and _arguments_ in **terraform** which we usually refers as components and see it make sense to keep them in **just one file** or **segregate them in multiple files.**
 
-* **Terraform Resources** are responsible to _**create/modify or destroy**_ your infrastructure component. They usually comes with the provider we choose (mentioned below)
+- **Terraform Resources** are responsible to _**create/modify or destroy**_ your infrastructure component. They usually comes with the provider we choose (mentioned below)
 
 ```terraform
 resource "aws_iam_role" "emr_service_role" {
@@ -33,7 +36,7 @@ resource "aws_iam_role" "emr_service_role" {
 }
 ```
 
-* `Variables` are used to provide input to the resource `parameters`.
+- `Variables` are used to provide input to the resource `parameters`.
 
 ```terraform
 variable "aws_region_shortname" {
@@ -55,7 +58,7 @@ resource "aws_iam_role" "emr_service_role" {
 }
 ```
 
-* **`Providers`** name and version of the provider which provide the above **terraform** resource
+- **`Providers`** name and version of the provider which provide the above **terraform** resource
 
 ```terraform
 terraform {
@@ -72,7 +75,7 @@ provider "aws" {
 }
 ```
 
-* `Locals` local variables which needs to be evaluated before feeding them to resource parameters
+- `Locals` local variables which needs to be evaluated before feeding them to resource parameters
 
 ```terraform
 locals {
@@ -86,12 +89,13 @@ resource "aws_iam_role" "emr_service_role" {
 }
 ```
 
-* **Variable File** terraform automatically identifies a file with `.tfvars` as variable file and expects all the inputs for the variables to be present in the file.
+- **Variable File** terraform automatically identifies a file with `.tfvars` as variable file and expects all the inputs for the variables to be present in the file.
+
 ```bash
 iam_prefix = "example-iam"
 ```
 
-* **Output Variables** are exported to be used as input for other parameters or as a result of `terraform` run
+- **Output Variables** are exported to be used as input for other parameters or as a result of `terraform` run
 
 ```terraform
 output "iam_name" {
@@ -105,17 +109,19 @@ So now we are aware of the type components terraform has and what they are used 
 As mentioned before putting all of them in one `.tf` file and inputs in one `.tfvars` should do the job. However, it will be very difficult to navigate the code, establish a relationship, hierarchy or make sense out of it. If you are using **multiple modules** _**(module = combination of multiple resources )**_ or even **multiple resources** then it will become way difficult to manage.
 
 To overcome this community has come up with following file structure for any terraform code
->
-* `main.tf` will be used to define all the provider resources
-* `variables.tf` will be used to declare variables for the values required by provider resource parameters
-* `locals.tf` will be used for all local variables and interpolation
-* `providers.tf` will be used to define the providers and the respective versions
-* `validators.tf` as I mentioned before that `tfvars` input should go to `data {}` and the exported attribute of the `data {}` should be fed to _**resource parameter**_. I prefer to keep them in `validators.tf`
-* `outputs.tf` will be used to define all terraform output variables
-* `examples.tfvars` will be used to provide all the input values for the variables
 
+>
+
+- `main.tf` will be used to define all the provider resources
+- `variables.tf` will be used to declare variables for the values required by provider resource parameters
+- `locals.tf` will be used for all local variables and interpolation
+- `providers.tf` will be used to define the providers and the respective versions
+- `validators.tf` as I mentioned before that `tfvars` input should go to `data {}` and the exported attribute of the `data {}` should be fed to _**resource parameter**_. I prefer to keep them in `validators.tf`
+- `outputs.tf` will be used to define all terraform output variables
+- `examples.tfvars` will be used to provide all the input values for the variables
 
 #### This is how usually a terraform repository looks like
+
 ```bash
 .
 ├── README.md

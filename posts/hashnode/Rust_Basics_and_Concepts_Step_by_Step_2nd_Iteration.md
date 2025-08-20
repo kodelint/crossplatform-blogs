@@ -1,12 +1,14 @@
 ---
 title: Rust - Basics and Concepts, Step by Step — 2nd Iteration
 subtitle: Rust Basic Concepts
-tags: rust, programming
+tags:
+  - rust
+  - programming
+  - concepts
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1657922647113/3r8jTvl9X.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
-
 
 This blog I will try to concentrate on some of the basic but very important concepts of Rust . This would be my 2nd blog about Rust , you can find the 1st one [here](https://sroy.hashnode.dev/rust-basics-and-concepts-step-by-step-1st-iteration). I will try to discuss about Ownership, Ownership transfers, Borrowing, Heap, Stack in this blog
 
@@ -23,6 +25,7 @@ Rust takes on an alternative approach called **ownership** and **borrowing**. Ow
 Let’s look at this code below and the output of it
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-rust-function.png)
+
 ```
 change the value of i=11
 print the value of i=10, after let_change_the_value_by_one call
@@ -37,6 +40,7 @@ Unlike `strings`, `integers` are stored in **stack** not in **heap** and while p
 Now, how about we change the variable from `i8` to string what happens than
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-rust-function-heap.png)
+
 ```
 18 |     let value_for_i = String::from("Rust");
    |----------- move occurs because `value_for_i` has type `String`, which does not implement the `Copy` trait**
@@ -47,6 +51,7 @@ Now, how about we change the variable from `i8` to string what happens than
 ```
 
 Now when **heap** is involved, the concept of **ownership** will be more transparent. When the variable `value_for_i` passes to function `lets_change_the_value_of_string` the compiler create a copy of the reference of the variable in **stack** and moves the **ownership** to it. Nothing happens to the value in **heap**. Once the control comes back to `main()` **the reference of variable** `value_for_i` no longer exist and that’s the reason complier is trying to tell us that **move** has occurred
+
 ```
 |----------- move occurs because `value_for_i` has type `String`, which does not implement the `Copy` trait**
 |     lets_change_the_value_of_string(value_for_i);
@@ -57,7 +62,7 @@ Here is illustration of the same
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/02-rust-heap-stack.png)
 
->  In nutshell, any variable in `Rust` within the scope is the owner of the value, it can’t be changed outside of it ownership. The `ownership` needs to be managed manually by the programmer themselves.
+> In nutshell, any variable in `Rust` within the scope is the owner of the value, it can’t be changed outside of it ownership. The `ownership` needs to be managed manually by the programmer themselves.
 
 To make this code work we can pass this `value_for_i.clone()` to the function and that will create a clone of reference and value
 
@@ -70,6 +75,7 @@ However what if we don’t want to transfer the ownership instead we want to mod
 In Rust we can **borrow** the reference of the variable from **stack** and then perform actions on the value in **seap** using the **borrowed** reference. This way we don’t have to deal with ownership transfers at all. To **borrow** the reference of `value_for_i` we use the **borrow** operator `&` , something like this `&value_for_i` and pass it to the function.
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-rust-function-borrowing.png)
+
 ```
 
 print the value of value_for_i=Rust, before lets_change_the_value_of_string call
@@ -79,13 +85,13 @@ print the value of value_for_i=Rust is awesome, after lets_change_the_value_of_s
 
 ##### Above example we are doing multiple things
 
- 1. Change the local variable `value_for_i` to mutable
+1.  Change the local variable `value_for_i` to mutable
 
- 2. Changed the parameter of function as `&mut value_for_i` , So the reference can be passed and also making it mutable
+2.  Changed the parameter of function as `&mut value_for_i` , So the reference can be passed and also making it mutable
 
- 3. Extended the string value using `push_str()` with `value_for_i` .
+3.  Extended the string value using `push_str()` with `value_for_i` .
 
- 4. Now when the control goes back to `main()` and the `println!` executed we get the modified string.
+4.  Now when the control goes back to `main()` and the `println!` executed we get the modified string.
 
 This explain how we can use borrowing to deal with value where we don’t want to transfer ownership. Though **borrowing** comes with some restriction.
 

@@ -1,11 +1,15 @@
 ---
 title: Golang - Writing memory efficient and CPU optimized Go Structs
 subtitle: Golang Structs
-tags: golang, programming
+tags:
+  - golang
+  - programming
+  - concepts
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1658805247447/zQ7A_dEqB.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
+
 A struct is a typed collection of fields, useful for grouping data into records. This allows all the data relating to one entity to be neatly encapsulated in one lightweight type definition, behavior can then be implemented by defining functions on the struct type.
 
 This blog I will try to explain how we can efficiently write struct in terms of **Memory** **Usages** and **CPU Cycles.**
@@ -62,7 +66,7 @@ func main() {
     fmt.Printf("PluginVersion Field StructType:d.PluginVersion %T => [%d]\n", d.PluginVersion, unsafe.Sizeof(d.PluginVersion))
     fmt.Printf("ModuleVersionMajor Field StructType:d.IsVersionControlled %T => [%d]\n", d.IsVersionControlled, unsafe.Sizeof(d.IsVersionControlled))
     fmt.Printf("TerraformVersion Field StructType:d.TerraformVersion %T => [%d]\n", d.TerraformVersion, unsafe.Sizeof(d.TerraformVersion))
-    fmt.Printf("ModuleVersionMajor Field StructType:d.ModuleVersionMajor %T => [%d]\n", d.ModuleVersionMajor, unsafe.Sizeof(d.ModuleVersionMajor))  
+    fmt.Printf("ModuleVersionMajor Field StructType:d.ModuleVersionMajor %T => [%d]\n", d.ModuleVersionMajor, unsafe.Sizeof(d.ModuleVersionMajor))
 }
 ```
 
@@ -80,6 +84,7 @@ ModuleVersionMajor Field StructType:d.IsVersionControlled bool => [1]
 TerraformVersion Field StructType:d.TerraformVersion string => [16]
 ModuleVersionMajor Field StructType:d.ModuleVersionMajor int32 => [4]
 ```
+
 So total memory allocation required for the TerraformResource struct is **88 bytes**. This is how the _**memory allocation**_ will look like for TerraformResource type
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-golang-struct-memory-map.jpeg)
@@ -93,11 +98,10 @@ When it comes to _**memory allocation**_ for structs, they are always allocated 
 We can clearly see that `TerraformResource.HaveDSL` , `TerraformResource.isVersionControlled` and `TerraformResource.ModuleVersionMajor` are only occupying `1 Byte`, `1 Byte` and `4 Bytes` respectively. Rest of the space is fill with _**empty pad bytes**_.
 
 So going back to same math
->
-  _**Allocation bytes**_ = `16 bytes` + `16 bytes` + `1 byte` + `16 bytes` + `1 byte` + `16 byte` + `4 bytes`  
-  _**Empty Pad bytes**_ = `7 bytes` + `7 bytes` + `4 bytes` = `18 bytes`  
-  _**Total bytes**_ = _**Allocation bytes**_ + _**Empty Pad bytes**_ = `70 bytes` + `18 bytes` = `88 bytes`
 
+> _**Allocation bytes**_ = `16 bytes` + `16 bytes` + `1 byte` + `16 bytes` + `1 byte` + `16 byte` + `4 bytes`
+> _**Empty Pad bytes**_ = `7 bytes` + `7 bytes` + `4 bytes` = `18 bytes`
+> _**Total bytes**_ = _**Allocation bytes**_ + _**Empty Pad bytes**_ = `70 bytes` + `18 bytes` = `88 bytes`
 
 So, How do we **fix** this ? With proper _**data structure alignment**_ what if we redefine our struct like this
 
@@ -114,6 +118,7 @@ type TerraformResource struct {
 ```
 
 Run the same [Code](https://gist.github.com/kodelint/a6f6b13d315b27ad649ca8fe4b41e67c#file-golang-struct-memory-allocation-optimized-go) with optimized struct
+
 ```golang
 package main
 
@@ -176,15 +181,14 @@ Now total _**memory allocation**_ for the `TerraformResource` type is `72 bytes`
 Just by doing proper _**data structure alignment**_ for the struct elements we were able to reduce the memory footprint from `88 bytes` to `72 bytes`**....Sweet!!**
 
 **Let’s check the math**
->
-_**Allocation bytes**_ = `16 bytes` + `16 bytes` + `16 bytes` + `16 bytes` + `4 bytes` + `1 byte` + `1 bytes` = `70 bytes`  
-_**Empty Pad bytes**_ = `2 bytes`  
-_**Total bytes**_ = _**Allocation bytes**_ + _**Empty Pad bytes**_ = `70 bytes` + `2 bytes` = `72 bytes`
 
+> _**Allocation bytes**_ = `16 bytes` + `16 bytes` + `16 bytes` + `16 bytes` + `4 bytes` + `1 byte` + `1 bytes` = `70 bytes`
+> _**Empty Pad bytes**_ = `2 bytes`
+> _**Total bytes**_ = _**Allocation bytes**_ + _**Empty Pad bytes**_ = `70 bytes` + `2 bytes` = `72 bytes`
 
 Proper _**data structure alignment**_ not only helps us use _**memory efficiently**_ but also with **CPU Read Cycles….How ?**
 
-CPU Reads memory in _**words**_ which is _**`4 bytes`**_ on a _**`32-bit`**_, _**`8 bytes`**_ on a _**`64-bit`**_ systems. Now our first declaration of struct type TerraformResource will take  `11 Words` for CPU to read everything
+CPU Reads memory in _**words**_ which is _**`4 bytes`**_ on a _**`32-bit`**_, _**`8 bytes`**_ on a _**`64-bit`**_ systems. Now our first declaration of struct type TerraformResource will take `11 Words` for CPU to read everything
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-golang-struct-word-length.jpeg)
 

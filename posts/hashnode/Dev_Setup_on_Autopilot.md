@@ -1,9 +1,12 @@
 ---
 title: "Dev Setup on Autopilot"
 subtitle: setup-devbox
-tags: ["rust", "git", "productivity"]
+tags:
+  - rust
+  - macOS
+  - productivity
 coverImage: "https://raw.githubusercontent.com/kodelint/kodelint.github.io/refs/heads/main/assets/uploads/01-setup-devbox.png"
-canonicalUrl: sroy.hashnode.dev/dev-setup-on-autopilot
+domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
 

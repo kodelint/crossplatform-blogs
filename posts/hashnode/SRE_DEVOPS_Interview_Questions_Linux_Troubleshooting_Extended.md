@@ -1,12 +1,15 @@
 ---
 title: SRE DevOps Interview Questions — Linux Troubleshooting Extended
 subtitle: SRE DevOps Interview Questions
-tags: interview, devops, sre, troubleshooting
+tags:
+  - interview
+  - devops
+  - sre
+  - troubleshooting
 cover: https://github.com/kodelint/blog-assets/raw/main/images/02-interview-01.jpeg?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
-
 
 This is an extension of my previous blog about **[SRE/DevOps Interview Questions — Linux Troubleshooting](https://awstip.com/sre-devops-interview-questions-linux-troubleshooting-1b8ffe82c16)**. Sometimes the initial question is vague and then follow-up kind of clears the path, that is what I am going to focus on in this blog. I will try to get more questions and possible explanations here.
 
@@ -15,11 +18,13 @@ This is an extension of my previous blog about **[SRE/DevOps Interview Questions
 **Answer**: After verifying the DNS and other things, I would try to `SSH` to the system and try to see what is going on
 
 **Follow Question**: You get an error message like the below:
+
 ```bash
 ssh: connect to host example.com port 22: Resource temporarily unavailable
 ```
 
 however you did find out that you have **IPMI** access to the machine, so you can use that to login and you get something like this:
+
 ```bash
 root@example.com#
 ```
@@ -27,10 +32,12 @@ root@example.com#
 **Follow up Answer**: So now I will try to run some basic commands to see what is going on like `top` , `ps` etc
 
 **Follow Question**: You still get a similar error for any command you run:
+
 ```
 fork: retry: Resource temporarily unavailable
 ```
->  **Note**: Now you might already know what is the issue, at least have some idea about it. It is related to **Resource being exhausted** may be files, processes etc etc and you figured that you can’t run any command (specifically any external command, which needs forking).
+
+> **Note**: Now you might already know what is the issue, at least have some idea about it. It is related to **Resource being exhausted** may be files, processes etc etc and you figured that you can’t run any command (specifically any external command, which needs forking).
 
 **Actual Question**: How would you troubleshoot a linux box, given none of the external commands executes?
 
@@ -39,15 +46,16 @@ fork: retry: Resource temporarily unavailable
 So how to find what commands are built-in and can be useful to you for troubleshooting ? Also if external commands are not available then how to gather information about the system (`top`, `ps`, `lsof`…even `cat` is not available )…..🤔
 
 → `/proc` filesystem and couple of **built-in** like read and for
->  
-Type help in the shell and it will give you all the commands which are **in-build** to the shell
-Read about /proc filesystem in my previous blog [SRE/DevOps Interview Questions — Linux Troubleshooting](https://awstip.com/sre-devops-interview-questions-linux-troubleshooting-1b8ffe82c16) and also [here](https://www.kernel.org/doc/html/latest/filesystems/proc.html)
+
+> Type help in the shell and it will give you all the commands which are **in-build** to the shell
+> Read about /proc filesystem in my previous blog [SRE/DevOps Interview Questions — Linux Troubleshooting](https://awstip.com/sre-devops-interview-questions-linux-troubleshooting-1b8ffe82c16) and also [here](https://www.kernel.org/doc/html/latest/filesystems/proc.html)
 
 Apparently, all the information coming from commands like `ps`, `lsof`, `vmstat` etc etc can be found in `/proc` file system if you look at the right file.
 
 For example `cmdline` file tells you about the last command ran on the system, `fd` directory contains all the file descriptors and all the folder with numbers are the PIDs running on the system.
 
 So assuming system has too many files open and all resources are exhausted, how to see if which pid is using how many file without using external commands
+
 ```bash
 for fd in /proc/[0-9]*/fd/*; do echo $fd ; done
 /proc/1/fd/0
@@ -58,9 +66,11 @@ for fd in /proc/[0-9]*/fd/*; do echo $fd ; done
 ```
 
 This way you can see the file descriptors any pid is using. If you want to see what is last command ran on the system without cat or see the content of the file with `cat`
+
 ```bash
 read $(</proc/${PID}/cmdline)
 ```
+
 So using `read`, for and other internal commands you can use to find out what is going on in the system.
 
 **Trick Question**: How do you delete a file named `-f` or `--file` ?
@@ -98,15 +108,18 @@ So using `read`, for and other internal commands you can use to find out what is
 **Question**: When you do `curl example.com` what happens?
 
 **Explanation**: I don’t have to say what happens when you do `curl example.com`, What I am going to suggest is that this is basically a combination of multiple questions
+
 >
- 1. How does curl executes on the system? Basically, go over the whole process of command execution from **user** space to **kernel** space.
- 2. Explain the `fork()` and `exec()` calls.
- 3. Explain the well known system calls which might be involved
- 4. **DNS Resolution** from `example.com` to an `IP Address`
- 5. Explain the Request transmission from your terminal to the destination machine and then respond back to your terminal
- 6. If possible go into detail about the packet transmission **Network layer 2–3** concepts
+
+1.  How does curl executes on the system? Basically, go over the whole process of command execution from **user** space to **kernel** space.
+2.  Explain the `fork()` and `exec()` calls.
+3.  Explain the well known system calls which might be involved
+4.  **DNS Resolution** from `example.com` to an `IP Address`
+5.  Explain the Request transmission from your terminal to the destination machine and then respond back to your terminal
+6.  If possible go into detail about the packet transmission **Network layer 2–3** concepts
 
 **Follow Up Question**: The output of `curl example.com` is this? Please explain?
+
 ```bash
 >> curl example.com
 <HTML>
@@ -124,6 +137,7 @@ Description: The document you requested has moved to a new location.  The new lo
 <HR>
 </BODY>
 ```
+
 **Explanation**: Talk about the **Response code** you have received (not visible in output) and why. What can you do to get `200` response code ?
 
 Explain how **HTTPS** works and go into detail in a **3-Way handshake**. Explain the **Asymmetric** and **Symmetric encryption** in terms of **SSL**. Here is a nice [writeup](https://www.digicert.com/faq/ssl-cryptography.htm) about it
