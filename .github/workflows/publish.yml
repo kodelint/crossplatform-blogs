@@ -21,7 +21,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           devto-token: ${{ secrets.DEVTO_TOKEN }}
           devto-path: "posts/dev.to"
-          hashnode-token: ${{ secrets.HASHNODE_TOKEN }}
+          hashnode-token: ${{ secrets.HASHNODE_PAT }}
           hashnode-publication-id: ${{ secrets.HASHNODE_PUBLICATION_ID }}
           hashnode-path: "posts/hashnode"
           medium-token: ${{ secrets.MEDIUM_TOKEN }}
