@@ -21,7 +21,7 @@ You know the ones:
 - `git commit -m "Add new feture for exporting data"`
 - `git commit -m "Corect a stupid tpyo in a stupid comment"`
 
-Every time I’d push a branch and open a pull request, I’d see my own mistakes staring back at me from the beautifully crafted UI of GitHub or GitLab. It was a tiny, public testament to my carelessness. Linters protect my code, but nothing was protecting my prose.
+Every time I’d push a branch and open a `pull request`, I’d see my own mistakes staring back at me from the beautifully crafted UI of GitHub or GitLab. It was a tiny, public testament to my carelessness. Linters protect my code, but nothing was protecting my prose.
 
 I was tired of it. It was time to automate the solution.
 
