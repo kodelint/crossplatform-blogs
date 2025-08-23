@@ -27,7 +27,7 @@ I was tired of it. It was time to automate the solution.
 
 ### The Solution: Git Hooks to the Rescue
 
-The natural place to solve this is with a **[Git hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)**, specifically the `commit-msg` hook. This hook runs after the default commit message file is created but _before_ the commit is finalized. It’s the perfect place to inspect the message and, if it doesn’t meet your standards, reject the commit entirely.
+The natural place to solve this is with a **[Git hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)**, specifically the `commit-msg` hook. This hook runs after the default commit message file is created but _before_ the _commit_ is finalized. It’s the perfect place to inspect the message and, if it doesn’t meet your standards, reject the commit entirely.
 
 The plan was simple:
 
