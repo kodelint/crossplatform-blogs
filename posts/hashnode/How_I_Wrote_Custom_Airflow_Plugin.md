@@ -120,7 +120,7 @@ create_ec2 >> terminate_ec2
 
 Above piece of code banks on the operator and creates the `ec2` instance with arguments provided and stores the result in [XCom - `create_ec2`](https://airflow.apache.org/docs/apache-airflow/1.10.12/concepts.html#xcoms)
 
-> [XComs](https://airflow.apache.org/docs/apache-airflow/1.10.12/concepts.html#xcoms) let tasks exchange messages, allowing more nuanced forms of control and shared state. The name is an abbreviation of “cross-communication”. XComs are principally defined by a key, value, and timestamp, but also track attributes like the task/DAG that created the XCom and when it should become visible. Any object that can be pickled can be used as an XCom value, so users should make sure to use objects of appropriate size.
+> [XComs](https://airflow.apache.org/docs/apache-airflow/1.10.12/concepts.html#xcoms) let tasks exchange messages, allowing more nuanced forms of control and shared state. The name is an abbreviation of `cross-communication`. `XComs` are principally defined by a key, value, and timestamp, but also track attributes like the task/DAG that created the XCom and when it should become visible. Any object that can be pickled can be used as an XCom value, so users should make sure to use objects of appropriate size.
 
 <p float="left">
   <img src=https://github.com/kodelint/blog-assets/raw/main/images/02-airflow-ec2-plugin.png width="470" height="250" />
