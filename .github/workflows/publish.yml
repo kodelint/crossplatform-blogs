@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0 # This is important to get full history for comparisons
 
       - name: Publish Blogs
-        uses: kodelint/blogs-publisher@v1
+        uses: kodelint/blogs-publisher@v1.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           devto-token: ${{ secrets.DEVTO_TOKEN }}
