@@ -6,7 +6,7 @@ tags:
   - programming
   - concepts
 publishedAt: 2022-07-05
-coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1657922647113/3r8jTvl9X.png?auto=compress
+cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1657922647113/3r8jTvl9X.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---

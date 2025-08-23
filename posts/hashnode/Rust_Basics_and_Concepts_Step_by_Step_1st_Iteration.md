@@ -6,7 +6,7 @@ tags:
   - programming
   - concepts
 publishedAt: 2022-07-02
-coverImage: https://github.com/kodelint/blog-assets/raw/main/images/01-rust.png?auto=compress
+cover_image: https://github.com/kodelint/blog-assets/raw/main/images/01-rust.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
@@ -17,7 +17,7 @@ So, I decided to start learning small concepts step by step, one or two things a
 
 ## Variables a immutable by default
 
-Took me sometime to realize that Rust by default treats all assigned variables as **immutable**. Which means once binding is done, _(another Rust concept, solely means that value has been assigned to the variable)_, you can’t reassign that variable with different value
+Took me sometime to realize that Rust by default treats all assigned variables as **immutable**. Which means once binding is done, _(another `Rust` concept, solely means that value has been assigned to the variable)_, you can’t reassign that variable with different value
 
 ```rust
 fn main() {

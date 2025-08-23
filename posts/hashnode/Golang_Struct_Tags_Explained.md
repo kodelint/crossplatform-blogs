@@ -30,7 +30,7 @@ type Employee struct {
 }
 ```
 
-If we define a variable say `emp` of type `Employee` then they will have similar attributes like `FirstName`, `LastName`, `EmployeeID` and `Salary`. Which can be accessed as
+If we define a variable say `emp` of type `Employee` then they will have similar **attributes** like `FirstName`, `LastName`, `EmployeeID` and `Salary`. Which can be accessed as
 
 ```golang
 // Assign the values

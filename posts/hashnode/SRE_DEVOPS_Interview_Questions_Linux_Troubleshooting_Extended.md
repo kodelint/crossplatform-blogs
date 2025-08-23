@@ -8,7 +8,7 @@ tags:
   - troubleshooting
   - platform-engineering
 publishedAt: 2022-05-05
-coverImage: https://github.com/kodelint/blog-assets/raw/main/images/02-interview-01.jpeg?auto=compress
+cover_image: https://github.com/kodelint/blog-assets/raw/main/images/02-interview-01.jpeg?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---

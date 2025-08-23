@@ -91,7 +91,7 @@ And returns **nothing**. Both [`create_instance`](https://github.com/kodelint/ai
 
 ### How to use
 
-Once the [`airflow-ec2-plugin-extended`](https://github.com/kodelint/airflow-ec2-plugin-extended) Plugin is installed and the `dag` is enabled you will see something like this in **Airflow Graph View**
+Once the [`airflow-ec2-plugin-extended`](https://github.com/kodelint/airflow-ec2-plugin-extended) **Plugin** is installed and the `dag` is enabled you will see something like this in **Airflow Graph View**
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-airflow-ec2-plugin.png)
 
