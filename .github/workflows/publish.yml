@@ -1,0 +1,22 @@
+name: Auto-publish Blogs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "posts/**/*.md"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: kodelint/blogs-publisher@v1
+        with:
+          medium-token: ${{ secrets.MEDIUM_TOKEN }}
+          devto-token: ${{ secrets.DEVTO_TOKEN }}
+          hashnode-token: ${{ secrets.HASHNODE_TOKEN }}
+          hashnode-publication-id: ${{ secrets.HASHNODE_PUBLICATION_ID }}
