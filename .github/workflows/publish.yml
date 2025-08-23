@@ -13,10 +13,23 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository with proper diff range
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-      - uses: kodelint/blogs-publisher@v1
+          fetch-depth: 2 # Get last 2 commits for proper diffing
+
+      - name: Debug git history
+        run: |
+          echo "Current commit: $(git log -1 --oneline)"
+          echo "Previous commit: $(git log -2 --oneline | tail -1)"
+          echo "Files changed between last 2 commits:"
+          git diff --name-only HEAD~1 HEAD
+
+      - name: Publish blogs
+        uses: kodelint/blogs-publisher@v1
+        env:
+          GIT_BEFORE: ${{ github.event.before }}
+          GIT_AFTER: ${{ github.event.after }}
         with:
           medium-token: ${{ secrets.MEDIUM_TOKEN }}
           devto-token: ${{ secrets.DEVTO_TOKEN }}

@@ -5,7 +5,6 @@ tags:
   - rust
   - macOS
   - productivity
-  - cli
 publishedAt: 2025-06-24
 coverImage: "https://raw.githubusercontent.com/kodelint/blog-images/262f9087d4ad93b54d5c147be33ae88eb5774947/common/01-git-spellchecker.png"
 domain: sroy.hashnode.dev
