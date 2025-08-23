@@ -5,6 +5,7 @@ tags:
   - rust
   - macOS
   - productivity
+  - cli
 publishedAt: 2025-06-24
 coverImage: "https://raw.githubusercontent.com/kodelint/blog-images/262f9087d4ad93b54d5c147be33ae88eb5774947/common/01-git-spellchecker.png"
 domain: sroy.hashnode.dev
@@ -136,4 +137,4 @@ To bypass this check, use 'git commit --no-verify'.
 
 It forces me to be better. It’s a small, automated nudge towards quality that has completely eliminated this petty annoyance from my workflow. My commit history is cleaner, and my pull requests no longer have that initial, embarrassing comment from me that just says _"fixed a typo in the commit message."_
 
-It’s a tiny investment in tooling that has paid for itself in reduced frustration a hundred times over. If you’re also tired of `typos`, I highly recommend giving it a try.
+It’s a tiny investment in tooling that has paid for itself in reduced _frustration_ a hundred times over. If you’re also tired of `typos`, I highly recommend giving it a try.
