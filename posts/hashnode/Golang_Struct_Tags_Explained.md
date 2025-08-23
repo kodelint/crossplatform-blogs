@@ -157,7 +157,7 @@ In above example I was able to validate following
 
 - `ManagerFirstName` is required field
 - `ManagerLastName` is `required_if` field `ManagerFirstName` is provided
-- `ManagerEmployeeID` is required field and it can’t be less than 1000
+- `ManagerEmployeeID` is required field and it can’t be less than **1000**
 
 So, instead of writing code for data validations for some of the fundamental and conditional validation, we can use [go-playground/validator](https://github.com/go-playground/validator) as they come with built-in logic for the same, completely based on `tags`
 

@@ -5,6 +5,7 @@ tags:
   - rust
   - macOS
   - productivity
+  - cli
 publishedAt: 2025-07-15
 coverImage: "https://raw.githubusercontent.com/kodelint/kodelint.github.io/refs/heads/main/assets/uploads/01-setup-devbox.png"
 domain: sroy.hashnode.dev

@@ -13,7 +13,7 @@ publishAs: deadl0ck
 
 For sometime I have been thinking to start coding in Rust however due to never ending things, I couldn’t start. Usually I start learning a language by start writing some utility code in it and learn along the way. However this time, time seems to be not on my side.
 
-So, I decided to start learning small concepts step by step, one or two things at a time and then take it from there. This blog is all about how I took this challenge and started making progress toward learning `Rust`
+So, I decided to start learning small concepts step by step, one or two things at a time and then take it from there. This blog is all about how I took this challenge and started making progress towards learning `Rust`
 
 ## Variables a immutable by default
 

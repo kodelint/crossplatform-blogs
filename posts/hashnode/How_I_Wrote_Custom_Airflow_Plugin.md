@@ -16,7 +16,7 @@ It's been quite some time I have been using [Apache Airflow](https://airflow.apa
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-airflow.png)
 
-Anyways we had a requirement to `create`, `terminate` `ec2` instances on the fly. With version [`1.10.12`](https://airflow.apache.org/docs/apache-airflow/1.10.12/project.html), one has to install [`apache-airflow-backport-providers-amazon`](https://pypi.org/project/apache-airflow-backport-providers-amazon/).
+Anyways we had a _**requirement**_ to `create`, `terminate` `ec2` instances on the fly. With version [`1.10.12`](https://airflow.apache.org/docs/apache-airflow/1.10.12/project.html), one has to install [`apache-airflow-backport-providers-amazon`](https://pypi.org/project/apache-airflow-backport-providers-amazon/).
 
 So [`apache-airflow-backport-providers-amazon`](https://pypi.org/project/apache-airflow-backport-providers-amazon/) does have support for [`ec2`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py) but only limited to **start** using [`EC2StartInstanceOperator`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py#L29) and **stop** using [`EC2StopInstanceOperator`](https://github.com/apache/airflow/blob/main/airflow/providers/amazon/aws/operators/ec2.py#L75), given the `instance_id` is known. It is missing **create** and **terminate** functionality.
 

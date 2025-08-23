@@ -17,7 +17,7 @@ This blog I will try to concentrate on some of the basic but very important conc
 
 Rust don’t have a **garbage collector**, you need to explicitly allocate and free memory space. This can quickly become tedious and challenging when it involves large codebases.
 
-Traditionally, there are two fundamental ways to manage memories. The first one is garbage collectors; it is mainly used in high-level languages that abstract the concept of memory management from the programmer.
+Traditionally, there are two **fundamental** ways to manage memories. The first one is garbage collectors; it is mainly used in high-level languages that abstract the concept of memory management from the programmer.
 
 The second is **manual** memory management, where the programmer explicitly defines memory usage. Although it provides control, it leaves much room to shoot yourself in the foot.
 

@@ -4,6 +4,7 @@ subtitle: Using Cobra for Golang CLI App
 tags:
   - golang
   - programming
+  - concepts
 publishedAt: 2022-03-25
 coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1658890256288/NxmuXS-FP.jpeg?auto=compress
 domain: sroy.hashnode.dev
