@@ -23,7 +23,7 @@ You know the ones:
 
 Every time I’d push a branch and open a `pull request`, I’d see my own mistakes staring back at me from the beautifully crafted UI of **GitHub** or **GitLab**. It was a tiny, public testament to my carelessness. Linters protect my code, but nothing was protecting my prose.
 
-I was tired of it. It was time to automate the solution.
+I was tired of it. It was time to **automate** the solution.
 
 ### The Solution: Git Hooks to the Rescue
 
