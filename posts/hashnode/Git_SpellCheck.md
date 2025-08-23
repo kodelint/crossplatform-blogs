@@ -6,18 +6,18 @@ tags:
   - macOS
   - productivity
 publishedAt: 2025-06-24
-coverImage: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*BZys8UV5m-1xHFsmT6_tYw.png"
+coverImage: "https://raw.githubusercontent.com/kodelint/blog-images/262f9087d4ad93b54d5c147be33ae88eb5774947/common/01-git-spellchecker.png"
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
 
 ## I Got Tired of Typoing in My Git Commits, So I Wrote a Spellchecker
 
-![A frustrated developer at a computer](https://miro.medium.com/v2/resize:fit:720/format:webp/1*0D5qQv1i8QpQv8qQv8qQv8Q.jpeg)
-
 ### The Problem: A Constant, Tiny Annoyance
 
 I’m a decent developer, but a terrible speller. It’s a combination that leads to a specific, low-grade, yet constant form of humiliation: the typo-ridden Git commit message.
+
+![A frustrated developer at a computer](https://raw.githubusercontent.com/kodelint/kodelint.github.io/refs/heads/main/assets/uploads/01-git-spellchecker.png)
 
 You know the ones:
 
