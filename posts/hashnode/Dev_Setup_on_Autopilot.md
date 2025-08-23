@@ -41,6 +41,8 @@ This constant “re-setup tax” was a major pain point, a recurring nightmare t
 
 That frustration finally boiled over, and I decided to tackle it head-on. I focused on a piece of software that solves this exact problem: [`setup-devbox`](https://github.com/kodelint/setup-devbox).
 
+![A frustrated developer at a computer](https://raw.githubusercontent.com/kodelint/kodelint.github.io/refs/heads/main/assets/uploads/01-setup-devbox.png)
+
 [`setup-devbox`](https://github.com/kodelint/setup-devbox) is my answer to the "new laptop dilemma." It’s a command-line tool that lets you define your entire development environment in **declarative `YAML` files**. This isn't just about listing tools; it's about stating the **desired end-state** of your machine, which is repeatable every single time, in a format that's both human-readable and machine-executable.
 
 #### Why Declarative `YAML`?

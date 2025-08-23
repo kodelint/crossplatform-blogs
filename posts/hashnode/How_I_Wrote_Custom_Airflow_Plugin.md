@@ -7,7 +7,7 @@ tags:
   - python
   - programming
 publishedAt: 2022-02-15
-coverImage: https://github.com/kodelint/blog-assets/raw/main/images/01-airflow.png?auto=compress
+cover_image: https://github.com/kodelint/blog-assets/raw/main/images/01-airflow.png?auto=compress
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---

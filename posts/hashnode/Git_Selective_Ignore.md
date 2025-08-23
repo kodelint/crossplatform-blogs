@@ -7,7 +7,7 @@ tags:
   - productivity
   - cli
 publishedAt: 2025-08-16
-coverImage: "https://raw.githubusercontent.com/kodelint/blog-images/refs/heads/main/common/01-git-selecting-ignore.png"
+cover_image: "https://raw.githubusercontent.com/kodelint/blog-images/refs/heads/main/common/01-git-selecting-ignore.png"
 domain: sroy.hashnode.dev
 publishAs: deadl0ck
 ---
