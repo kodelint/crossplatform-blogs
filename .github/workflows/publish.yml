@@ -4,36 +4,21 @@ on:
   push:
     branches: [main]
     paths:
-      - "posts/dev.to/*.md"
-      - "posts/hashnode/*.md"
-      - "posts/medium/*.md"
-  workflow_dispatch:
+      - "posts/**/*.md"
+      - "posts/**/*.markdown"
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0 # This is important to get full history for comparisons
 
-      - name: Get changed files manually
-        id: changed-files
-        run: |
-          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD | grep -E "posts/(dev\.to|hashnode|medium)/" | tr '\n' ' ' | sed 's/ $//' || true)
-          echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
-          echo "Found files: $CHANGED_FILES"
-
-      - name: Debug changed files
-        run: |
-          echo "Files that should be processed:"
-          echo "${{ steps.changed-files.outputs.changed_files }}"
-
-      - name: Publish blogs (force all files)
+      - name: Publish Blogs
         uses: kodelint/blogs-publisher@v1
         with:
-          medium-token: ${{ secrets.MEDIUM_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           devto-token: ${{ secrets.DEVTO_TOKEN }}
           hashnode-token: ${{ secrets.HASHNODE_TOKEN }}
           hashnode-publication-id: ${{ secrets.HASHNODE_PUBLICATION_ID }}

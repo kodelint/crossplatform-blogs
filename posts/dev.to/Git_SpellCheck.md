@@ -132,4 +132,4 @@ To bypass this check, use 'git commit --no-verify'.
 
 It forces me to be better. It’s a small, automated nudge towards quality that has completely eliminated this petty annoyance from my workflow. My commit history is cleaner, and my pull requests no longer have that initial, embarrassing comment from me that just says _"fixed a typo in the commit message."_
 
-It’s a tiny investment in tooling that has paid for itself in reduced _frustration_ a hundred times over. If you’re also tired of `typos`, I highly recommend giving it a try.
+It’s a tiny _investment_ in tooling that has paid for itself in reduced _frustration_ a hundred times over. If you’re also tired of `typos`, I highly recommend giving it a try.
