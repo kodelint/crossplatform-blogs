@@ -48,7 +48,7 @@ The goal is to create a tool that automatically generates the backend block and 
 
 ### **Explanation**
 
-Let's call our tool `autotf`. It will have two sub-commands: `verify` and `deploy`.
+Let's call our tool `autotf`. It will have two _sub-commands_: `verify` and `deploy`.
 
 #### **Flow Control and Decision Making**
 
