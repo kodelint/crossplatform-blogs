@@ -15,6 +15,9 @@ jobs:
         with:
           fetch-depth: 0 # This is important to get full history for comparisons
 
+      - name: Show me the env
+        run: env
+
       - name: Publish Blogs
         uses: kodelint/blogs-publisher@v1.1.0-develop.2
         with:
