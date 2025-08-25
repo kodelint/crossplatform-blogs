@@ -37,7 +37,7 @@ The goal is to create a tool that automatically generates the backend block and 
 
 - It should accept environment variables for `S3`, `DynamoDB`, and `Region`.
 - It should take a `tfvars` file as an argument.
-- It should generate the `backend` configuration using either the environment variables or the absolute path of the `tfvars` file.
+- It should generate the backend configuration using either the environment variables or the absolute path of the `tfvars` file.
 - It should be able to run `terraform init`, `terraform plan`, `terraform apply`, and `terraform destroy`.
 - It should run `terraform init`, `terraform plan`, and `terraform apply` if the filename ends with `*.tfvars`.
 - It should run `terraform plan -destroy` and `terraform destroy` if the filename ends with `*.destroy`.

@@ -24,6 +24,8 @@ jobs:
           echo "From var: ${{ vars.ACTIONS_RUNNER_DEBUG }}"
 
       - name: Publish Blogs
+        env:
+          ACTIONS_RUNNER_DEBUG: ${{ vars.ACTIONS_RUNNER_DEBUG }}
         uses: kodelint/blogs-publisher@v1.1.0-develop.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
