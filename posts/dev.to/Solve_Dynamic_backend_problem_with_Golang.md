@@ -6,6 +6,7 @@ description: "Terraform State file dynamic generation"
 tags:
   - concepts
   - terraform
+  - automation
   - golang
 series: null
 canonical_url: null
