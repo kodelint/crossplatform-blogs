@@ -16,13 +16,13 @@ jobs:
           fetch-depth: 0 # This is important to get full history for comparisons
 
       - name: Publish Blogs
-        uses: kodelint/blogs-publisher@v1.0.3
+        uses: kodelint/blogs-publisher@v1.1.0-develop.1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          devto-token: ${{ secrets.DEVTO_TOKEN }}
-          devto-path: "posts/dev.to"
-          hashnode-token: ${{ secrets.HASHNODE_PAT }}
-          hashnode-publication-id: ${{ secrets.HASHNODE_PUBLICATION_ID }}
-          hashnode-path: "posts/hashnode"
-          medium-token: ${{ secrets.MEDIUM_TOKEN }}
-          medium-path: "posts/medium"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          devto_token: ${{ secrets.DEVTO_TOKEN }}
+          devto_path: "posts/dev.to"
+          hashnode_token: ${{ secrets.HASHNODE_PAT }}
+          hashnode_publication_id: ${{ secrets.HASHNODE_PUBLICATION_ID }}
+          hashnode_path: "posts/hashnode"
+          medium_token: ${{ secrets.MEDIUM_TOKEN }}
+          medium_path: "posts/medium"
