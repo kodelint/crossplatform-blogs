@@ -26,3 +26,5 @@ jobs:
           hashnode_path: "posts/hashnode"
           medium_token: ${{ secrets.MEDIUM_TOKEN }}
           medium_path: "posts/medium"
+          update_already_published: true
+          debugging_enabled: false
