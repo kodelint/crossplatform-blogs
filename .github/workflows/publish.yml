@@ -15,10 +15,13 @@ jobs:
         with:
           fetch-depth: 0 # This is important to get full history for comparisons
 
-      - name: Show me the env
+      - name: Show me the env directly
         run: |
-          - echo "Direct: $ACTIONS_RUNNER_DEBUG"
-          - echo "From var: ${{ vars.ACTIONS_RUNNER_DEBUG }}"
+          echo Direct: $ACTIONS_RUNNER_DEBUG
+
+      - name: Show me the env from var
+        run: |
+          echo "From var: ${{ vars.ACTIONS_RUNNER_DEBUG }}"
 
       - name: Publish Blogs
         uses: kodelint/blogs-publisher@v1.1.0-develop.2
