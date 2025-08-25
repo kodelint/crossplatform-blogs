@@ -3,7 +3,9 @@ published: true
 title: "Solve Dynamic backend problem with Golang"
 cover_image: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffbaes3u2eqb91de2z8cw.jpeg"
 description: "Terraform State file dynamic generation"
-tags: "terraform, automation, cli"
+  - concepts
+  - terraform
+  - golang
 series: null
 canonical_url: null
 date: "2022-07-10"
