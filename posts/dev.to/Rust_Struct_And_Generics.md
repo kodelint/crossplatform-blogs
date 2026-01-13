@@ -3,7 +3,7 @@ published: true
 title: "Rust - Struct, Generics"
 cover_image: "https://github.com/kodelint/blog-assets/raw/main/images/01-rust-struct.jpg"
 description: null
-tags: 'rust, programming'
+tags: [rust, programming]
 series: null
 canonical_url: null
 id: 1159567
