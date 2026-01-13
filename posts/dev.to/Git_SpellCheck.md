@@ -2,7 +2,7 @@
 title: "I Got Tired of Typoing in My Git Commits, So I Wrote a Spellchecker"
 cover_image: "https://raw.githubusercontent.com/kodelint/blog-images/262f9087d4ad93b54d5c147be33ae88eb5774947/common/01-git-spellchecker.png"
 description: "Let’s be honest: typos in Git commit messages are embarrassing"
-tags: "rust, macOS, productivity, cli"
+tags: [rust, macOS, productivity, cli]
 published: true
 date: "2025-06-24"
 ---

@@ -1,15 +1,14 @@
 ---
 published: true
 title: Golang - How I learned Go!!
-cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-learn-go.png'
+cover_image: "https://github.com/kodelint/blog-assets/raw/main/images/01-learn-go.png"
 description: null
-tags: 'golang, programming'
+tags: [golang, programming]
 series: null
 canonical_url: null
 id: 1154032
-date: '2022-07-28T19:09:55Z'
+date: "2022-07-28T19:09:55Z"
 ---
-
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/02-learn-go.png)
 
@@ -23,7 +22,7 @@ I had this requirement where I wanted to sync external _**GitHub Repositories**_
 
 ### Requirements:
 
- 1. **Read the YAML:** The program should read a `YAML` file, which is organized something like below:
+1.  **Read the YAML:** The program should read a `YAML` file, which is organized something like below:
 
 ```yaml
 RepositoryList:
@@ -87,10 +86,11 @@ if err != nil {
 **2. Fetch Credentials from Vault**: All `credentials` are in vault the program needs to fetch them from `vault` based on couple of `environment` variables like
 
 >
-* `VAULT_ADDRESS`,
-* `VAULT_APP_ROLE_ID`,
-* `VAULT_APP_ROLE_SECRET_ID`,
-* `VAULT_SECRET_PATH`
+
+- `VAULT_ADDRESS`,
+- `VAULT_APP_ROLE_ID`,
+- `VAULT_APP_ROLE_SECRET_ID`,
+- `VAULT_SECRET_PATH`
 
 I used ["hashicorp/vault/api"](http://github.com/hashicorp/vault/api) module for the same.
 
@@ -115,14 +115,16 @@ All the data read from `YAML` file can now access under `v.<<FieldName>>`. Somet
 ### Learnings
 
 So with this exercise was I was able to quite few things, here are some of them:
+
 >
-* **Go `Structs`**
-* **Go `Structs` Tags**
-* **Go `DataTypes`**
-* **How to use external modules**
-* **Reading Files**
-* **Encoding and Decoding `YAML` Data**
-* **Access data with `FieldName`**
+
+- **Go `Structs`**
+- **Go `Structs` Tags**
+- **Go `DataTypes`**
+- **How to use external modules**
+- **Reading Files**
+- **Encoding and Decoding `YAML` Data**
+- **Access data with `FieldName`**
 
 Learning a new programming language is always fun and when you choose something to build along side then it becomes more involved and interesting!
 

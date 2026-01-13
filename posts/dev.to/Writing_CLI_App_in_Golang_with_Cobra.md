@@ -1,18 +1,18 @@
 ---
 published: true
 title: Golang - Writing CLI App in Golang with Cobra
-cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-golan-cli.jpeg'
+cover_image: "https://github.com/kodelint/blog-assets/raw/main/images/01-golan-cli.jpeg"
 description: Using Cobra for Golang CLI App
-tags: 'golang, programming'
+tags: [golang, programming]
 id: 1152440
-date: '2022-07-27T02:46:29Z'
+date: "2022-07-27T02:46:29Z"
 ---
 
 Golang has good amount libraries in-build and maintained by community. One of them is [Cobra](https://github.com/spf13/cobra), which is pretty good to write any _**cli apps**_. Today will try to see how we can use the library and what all functionality it provides.
 
 ![](https://github.com/kodelint/blog-assets/raw/main/images/01-golan-cli.jpeg)
 
->The **goal** is to understand how to write a **cli app** in Golang using [Cobra](https://github.com/spf13/cobra). So the app will only print strings for sub-commands executions.*
+> The **goal** is to understand how to write a **cli app** in Golang using [Cobra](https://github.com/spf13/cobra). So the app will only print strings for sub-commands executions.\*
 
 ### Requirements Hypothetical
 
@@ -47,7 +47,7 @@ func main() {
 }
 ```
 
->Note: Don’t worry about `commands.Execute()` which we haven’t defined yet. Basically it is calling the `Execute()` function from `package commands`.
+> Note: Don’t worry about `commands.Execute()` which we haven’t defined yet. Basically it is calling the `Execute()` function from `package commands`.
 
 **`root.go`** ➡ let’s check the `root.go` which will have the `init()` function which will be responsible to run some of the stuff we need to be executed first. To read more about go `init()` function check [my previous blog](https://blog.devgenius.io/what-is-init-in-golang-b806caa52822).
 
@@ -87,6 +87,7 @@ func Execute() {
    }
 }
 ```
+
 #### Let me explain couple of things here
 
 Now I have variable called `rootCmd` which has type of `&cobra.Command{}` type. The `&cobra.Command{}` type basically has fields like `Use`, `Short` and `Long` to be populated. Which are nothing but the name of the cli app and _**short**_ and _**long**_ description for the app which will be displayed when we run the app. Read more about [Command](https://pkg.go.dev/github.com/spf13/cobra#Command) Type.
@@ -99,7 +100,7 @@ var rootCmd = &cobra.Command{
 }
 ```
 
-Next important thing is `init()` function which is calling another method of **cobra's**  `AddCommand()`. Here I added both the _**sub-commands**_ I needed for my app `checkUrlsCmd` and `checkStatusCmd`. These are just variables so it doesn’t matter what you name them. To read more about go `init()` function check [my previous blog](https://blog.devgenius.io/what-is-init-in-golang-b806caa52822).
+Next important thing is `init()` function which is calling another method of **cobra's** `AddCommand()`. Here I added both the _**sub-commands**_ I needed for my app `checkUrlsCmd` and `checkStatusCmd`. These are just variables so it doesn’t matter what you name them. To read more about go `init()` function check [my previous blog](https://blog.devgenius.io/what-is-init-in-golang-b806caa52822).
 
 ```golang
 func init() {
@@ -253,11 +254,13 @@ Use "url-monitor [command] --help" for more information about a command.
 ```
 
 ##### Let run the first sub-command `check-url`
+
 ```bash
 >> ./url-monitor check-urls https://example.com/apis/v1/get-status
 
 HI!! From check-urls sub-command with https://example.com/apis/v1/get-status as argument
 ```
+
 ##### Let run the second sub-command `check-status`
 
 ```bash
@@ -267,11 +270,13 @@ HI!! From check-status sub-command with https://example.com/apis/v1/get-status a
 ```
 
 ##### Lets try a wrong URL
+
 ```bash
 >> ./url-monitor check-status example.com/apis/v1/get-status
 
 FATL 2022-03-25 12:43:07 wrong url type [parse "example.com/apis/v1/get-status": invalid URI for request]
 ```
+
 Here are few projects where [Cobra](https://github.com/spf13/cobra) has been used _**Github CLI**_, _**Docker (distribution)**_, _**Etcd**_, _**GoReleaser**_, _**Helm**_, _**Kubernetes**_ etc. The whole list can be found [here](https://github.com/spf13/cobra/blob/master/projects_using_cobra.md)
 
 There are alternatives available for [**Cobra**](https://github.com/spf13/cobra) as well i.e. [**mitchellh/cli**](https://github.com/mitchellh/cli), [**go-flags**](https://github.com/jessevdk/go-flags), [**urfave/cli**](https://github.com/urfave/cli) etc.

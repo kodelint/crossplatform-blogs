@@ -1,15 +1,14 @@
 ---
 published: true
 title: Golang - Struct Tags explained
-cover_image: 'https://github.com/kodelint/blog-assets/raw/main/images/01-Use-Struct-Tags-in-Golang.jpeg'
+cover_image: "https://github.com/kodelint/blog-assets/raw/main/images/01-Use-Struct-Tags-in-Golang.jpeg"
 description: null
-tags: 'golang, programming'
+tags: [golang, programming]
 series: null
 canonical_url: null
 id: 1153214
-date: '2022-07-28T00:15:30Z'
+date: "2022-07-28T00:15:30Z"
 ---
-
 
 Today will try to explore **Golang's structure** `tags`. **Structure** or `struct` is the way to define custom `types` in `Golang`. In simple terms struct can be explained as
 
@@ -29,12 +28,13 @@ type Employee struct {
   Salary     float64
 }
 ```
+
 If we define a variable say `emp` of type `Employee` then they will have similar attributes like `FirstName`, `LastName`, `EmployeeID` and `Salary`. Which can be accessed as
 
 ```golang
 // Assign the values
 emp.FirstName = "Satyajit"
-emp.LastName = "Roy"  
+emp.LastName = "Roy"
 emp.EmployeeID = "1234"
 emp.Salary = 111.0
 
@@ -59,6 +59,7 @@ type Employee struct {
   Salary     float64 `json: "salary"`
 }
 ```
+
 `Go` code is then capable of examining these `structs` and extracting the values assigned to specific keys it requests. **Struct** `tags` have no effect on the operation of your code without some other code that examines them.
 
 If we are reading the `YAML` or `JSON` file then we can annotate the `struct` something like this
@@ -126,14 +127,15 @@ type Manager struct {
 }
 ```
 
-If you want to go deeper and access the tags then you can use [_**reflect**_](https://pkg.go.dev/reflect) package which allows run-time [reflection](https://en.wikipedia.org/wiki/Reflection_(computer_programming))
+If you want to go deeper and access the tags then you can use [_**reflect**_](https://pkg.go.dev/reflect) package which allows run-time [reflection](<https://en.wikipedia.org/wiki/Reflection_(computer_programming)>)
 
 Using tag makes life way to easier to navigate storing data and it’s representations. You can use [_**go-playground/validator**_](https://github.com/go-playground/validator) which provides much more capabilities around tags. Some of the abilities are like
 
 >
-* comparison between fields
-* conditioning between fields
-* manage dependencies between fields and lot more….
+
+- comparison between fields
+- conditioning between fields
+- manage dependencies between fields and lot more….
 
 #### For Example:
 
@@ -149,10 +151,12 @@ type Manager struct {
 ```
 
 In above example I was able to validate following
+
 >
-* `ManagerFirstName` is required field
-* `ManagerLastName` is `required_if` field `ManagerFirstName` is provided
-* `ManagerEmployeeID` is required field and it can’t be less than 1000
+
+- `ManagerFirstName` is required field
+- `ManagerLastName` is `required_if` field `ManagerFirstName` is provided
+- `ManagerEmployeeID` is required field and it can’t be less than 1000
 
 So, instead of writing code for data validations for some of the fundamental and conditional validation, we can use [go-playground/validator](https://github.com/go-playground/validator) as they come with built-in logic for the same, completely based on `tags`
 
