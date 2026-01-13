@@ -1,6 +1,6 @@
 ---
 published: true
-title: "Golang - Garbage Collection in\_General"
+title: "[Golang] Garbage Collection in General"
 cover_image: "https://github.com/kodelint/blog-assets/raw/main/images/01-golang-garbage-collection-header.png"
 description: null
 tags: [golang, programming]
