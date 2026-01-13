@@ -16,9 +16,9 @@ publishAs: deadl0ck
 
 _Or: How I Learned to Stop Worrying and Love Committing Without Fear_
 
-**Picture this:** It's **2 AM**, you're deep in the coding zone, your coffee has gone cold (again), and you've just figured out why your **API integration** wasn't working. You quickly hardcode that API key to test it out—just temporarily, of course. The fix works! You're ecstatic. You commit your changes with a triumphant message: "Fixed the thing that was broken!"
+**Picture this:** It's 2 AM, you're deep in the coding zone, your coffee has gone cold (again), and you've just figured out why your API integration wasn't working. You quickly hardcode that API key to test it out—just temporarily, of course. The fix works! You're ecstatic. You commit your changes with a triumphant message: "Fixed the thing that was broken!"
 
-Fast forward to **9 AM** the next day. Your security team is having what can only be described as a "spirited discussion" about API keys appearing in your Git history. Your coffee is cold again, but this time it's because your blood has turned to ice.
+Fast forward to 9 AM the next day. Your security team is having what can only be described as a "spirited discussion" about API keys appearing in your Git history. Your coffee is cold again, but this time it's because your blood has turned to ice.
 
 Sound familiar? Welcome to the club. We have t-shirts, but ironically, we can't put the design in our Git repo because it has our logo's secret color codes in it.
 
@@ -69,18 +69,29 @@ You realize you've committed something sensitive and spend the next hour learnin
 This is where `git-selective-ignore` comes in. Think of it as a precision instrument in a world of sledgehammers.
 
 <p align="center">
-  <img src="https://github.com/kodelint/blog-images/blob/main/common/01-git-selecting-ignore.png" alt="git-selective-ignore" width="500"/>
+  <img src="https://raw.githubusercontent.com/kodelint/blog-images/main/common/01-git-selecting-ignore.png" alt="git-selective-ignore" width="500"/>
 </p>
 
-Instead of treating files as atomic units, this tool lets you specify exactly which parts of a file should be ignored during commits. It's like having a conversation with Git:
+Instead of treating files as atomic units, this tool lets you specify exactly which parts of a file should be ignored during commits. It’s like having a conversation with Git:
 
-**You**: _"Hey Git, commit this file, but ignore lines 13-16, and also any line that contains 'API_KEY', and oh, while you're at it, skip that debug block between the comments."_
-
-**Git**: _"That's not how I—"_
-
-**git-selective-ignore**: _"I got this. `Git`, just commit what they want you to commit. Trust me."_
-
-**Git**: "...okay, but this feels weird."
+<div class="holo-communication-log">
+  <div class="comm-line">
+    <span class="comm-label user">You</span>
+    <span class="comm-text">"Hey Git, commit this file, but ignore lines 13-16, and also any line that contains 'API_KEY', and oh, while you're at it, skip that debug block between the comments."</span>
+  </div>
+  <div class="comm-line">
+    <span class="comm-label git">Git</span>
+    <span class="comm-text">"That's not how I—"</span>
+  </div>
+  <div class="comm-line">
+    <span class="comm-label tool">Tool</span>
+    <span class="comm-text">"I got this. <em>Git</em>, just commit what they want you to commit. Trust me."</span>
+  </div>
+  <div class="comm-line">
+    <span class="comm-label git">Git</span>
+    <span class="comm-text">"...okay, but this feels weird."</span>
+  </div>
+</div>
 
 ## How It Actually Works (The Magic Behind the Curtain)
 
